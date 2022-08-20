@@ -3,10 +3,11 @@ import type { RootState, AppDispatch } from 'store/store'
 import { bindActionCreators } from 'redux'
 import { allActions } from 'store/reducers/mainReducer'
 
-// Use throughout your app instead of plain `useDispatch` and `useSelector`
+// MAIN STATE HOOKS --------------------------------------------------------->
 export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 
+//  CUSTOM HOOKS ------------------------------------------------------------>
 export const useActions = () => {
   const dispatch = useAppDispatch()
   return bindActionCreators(allActions, dispatch)
