@@ -10,7 +10,7 @@ const initialState: StateType = {
     { id: 2, technologyName: 'Java Script', yearsOfExperience: 4.5 },
   ],
   userAvatar: 'https://resize-media.festival-cannes.com/fit-in/2560x1620/media_image/0001/48/c3c10a98dd47ddf0cba7be6850f0815dae7841a8.jpeg',
-  input: '',
+  location: 'Portland, Oregon',
 }
 
 // SLICE -------------------------------------------------------------------->
@@ -20,8 +20,8 @@ const mainSlice = createSlice({
   initialState,
   reducers: {
 
-    updateInput: (state, action: PayloadAction<string>) => {
-      state.input = action.payload
+    changeName: (state, action: PayloadAction<string>) => {
+      state.userName = action.payload
     },
 
     addTechnology: (state, action: PayloadAction<StackType>) => {
