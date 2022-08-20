@@ -4,6 +4,7 @@ import AddIcon from '@mui/icons-material/Add'
 import { useAppSelector, useActions } from 'hooks'
 import { StackType } from 'store/reducers/reducer.types'
 import { HeaderContainer, UserInfo, UserAvatar, UserName, Skill, PrintInfo } from './styles'
+import NameField from './components/NameField'
 
 const Header: React.FC = () => {
 
@@ -11,13 +12,11 @@ const Header: React.FC = () => {
   const [isInEditingMode, toggleEditingMode] = useState(false)
 
   const {
-    userName,
     userStack,
     userAvatar,
     userInput,
   } = useAppSelector(
     state => ({
-      userName: state.main.userName,
       userStack: state.main.userStack,
       userAvatar: state.main.userAvatar,
       userInput: state.main.input,
@@ -27,9 +26,6 @@ const Header: React.FC = () => {
   // HANDLERS --------------------------------------------------------------->
   const { addTechnology, updateInput } = useActions()
 
-  const handleSubmit = () => {
-    toggleEditingMode(false)
-  }
   const handleInput = (input: string) => {
     updateInput(input)
   }
@@ -44,15 +40,7 @@ const Header: React.FC = () => {
       />
 
       <UserInfo>
-        {isInEditingMode
-          ? <Input
-            onChange={(e) => handleInput(e.target.value)}
-            value={userInput}
-            placeholder={userName}
-            onSubmit={handleSubmit}
-          />
-          : <UserName onClick={() => toggleEditingMode(true)}>{userName}</UserName>
-        }
+        <NameField />
         <Typography>City</Typography>
         <Typography>language</Typography>
 
@@ -63,7 +51,11 @@ const Header: React.FC = () => {
               onChange={(e) => handleInput(e.target.value)}
               value={userInput}
               placeholder='skill'
-              onSubmit={handleSubmit}
+              sx={{
+                fontWeight: '400',
+                fontSize: '14px',
+                maxHeight: '16px',
+              }}
             />
             : <Skill label={<AddIcon />} onClick={() => toggleEditingMode(true)} />}
         </Box>

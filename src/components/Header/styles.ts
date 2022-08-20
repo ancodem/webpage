@@ -22,11 +22,13 @@ export const UserAvatar = styled(Avatar)(({ theme }) => ({
 })) as typeof Avatar
 
 export const UserName = styled(Typography)(({ theme }) => ({
+  alignItems: 'center',
   fontWeight: '500',
   lineHeight: '48px',
   fontSize: '40px',
   '&:hover': {
     backgroundColor: '#e2e3e3',
+    width: '100%',
   },
 })) as typeof Typography
 
