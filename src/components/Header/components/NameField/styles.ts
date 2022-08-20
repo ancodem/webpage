@@ -6,9 +6,11 @@ export const Name = styled(Typography)(({ theme }) => ({
   fontWeight: '500',
   lineHeight: '48px',
   fontSize: '40px',
+  transitionDuration: '500ms',
+  width: '360px',
+
   '&:hover': {
     backgroundColor: '#e2e3e3',
-    width: '360px',
   },
 })) as typeof Typography
 
