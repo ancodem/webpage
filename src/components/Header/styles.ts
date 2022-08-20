@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 import { Box, Avatar, Typography, Chip, Link } from '@mui/material'
 
 export const HeaderContainer = styled(Box)(({ theme }) => ({
@@ -25,6 +25,9 @@ export const UserName = styled(Typography)(({ theme }) => ({
   fontWeight: '500',
   lineHeight: '48px',
   fontSize: '40px',
+  '&:hover': {
+    backgroundColor: '#e2e3e3',
+  },
 })) as typeof Typography
 
 export const Skill = styled(Chip)(({ theme }) => ({
