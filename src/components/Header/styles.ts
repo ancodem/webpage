@@ -21,16 +21,6 @@ export const UserAvatar = styled(Avatar)(({ theme }) => ({
   border: 'solid 4px white',
 })) as typeof Avatar
 
-export const UserName = styled(Typography)(({ theme }) => ({
-  alignItems: 'center',
-  fontWeight: '500',
-  lineHeight: '48px',
-  fontSize: '40px',
-  '&:hover': {
-    backgroundColor: '#e2e3e3',
-    width: '100%',
-  },
-})) as typeof Typography
 
 export const Skill = styled(Chip)(({ theme }) => ({
   fontWeight: '400',
@@ -40,17 +30,26 @@ export const Skill = styled(Chip)(({ theme }) => ({
   backgroundColor: '#333333',
   borderRadius: '4px',
   height: '24px',
-  marginRight: '10px',
+  transitionDuration: '500ms',
+
+  '&:hover': {
+    backgroundColor: '#666666',
+    cursor: 'pointer',
+  },
 })) as typeof Chip
 
 export const PrintInfo = styled(Link)(({ theme }) => ({
+  display: 'flex',
+  gap: '8px',
   fontWeight: '400',
   fontSize: '16px',
   position: 'absolute',
   top: '40px',
   right: '156px',
+  transitionDuration: '500ms',
 
   '&:hover': {
     cursor: 'pointer',
+    color: '#EB5757',
   },
 })) as typeof Link
