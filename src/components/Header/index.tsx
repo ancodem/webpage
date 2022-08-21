@@ -1,6 +1,7 @@
 import React from 'react'
 import { Typography } from '@mui/material'
 import PrintIcon from '@mui/icons-material/Print'
+
 import { useAppSelector } from 'hooks'
 import NameField from 'components/NameField'
 import Location from 'components/Location'
@@ -10,13 +11,7 @@ import { HeaderContainer, UserInfo, UserAvatar, PrintInfo } from './styles'
 const Header: React.FC = () => {
 
   // STATE ------------------------------------------------------------------>
-  const {
-    userAvatar,
-  } = useAppSelector(
-    state => ({
-      userAvatar: state.main.userAvatar,
-    })
-  )
+  const { userAvatar } = useAppSelector(state => state.main)
 
   // JSX  ------------------------------------------------------------------->
   return (

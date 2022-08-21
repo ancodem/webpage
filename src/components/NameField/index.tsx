@@ -9,9 +9,9 @@ const NameField: React.FC = () => {
   const { userName } = useAppSelector(state => state.main)
   const [isInEditingMode, toggleEditingMode] = useState(false)
   const [input, updateInput] = useState('')
-
-  // CONTROLS --------------------------------------------------------------->
   const { changeName } = useActions()
+
+  // LOGIC ------------------------------------------------------------------>
   const handleConfirmation: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
     if (e.keyCode === 13) {
       changeName(input)
@@ -23,6 +23,7 @@ const NameField: React.FC = () => {
   // JSX -------------------------------------------------------------------->
   return (
     <article>
+
       {isInEditingMode
         ? <FormControl>
           <NameInput
@@ -37,6 +38,7 @@ const NameField: React.FC = () => {
         </FormControl>
         : <Name onClick={() => toggleEditingMode(true)}>{userName}</Name>
       }
+
     </article>
   )
 }

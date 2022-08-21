@@ -11,15 +11,20 @@ const sampleWorks: Array<{ id: number, title: string }> = [
 
 const Portfolio: React.FC = () => (
   <article>
+
     <Typography variant='h4'>Portfolio</Typography>
+
     <List>
       {sampleWorks.map(work =>
+
         <ListItem key={work.id}>
           <Typography>
             <Link to='#'>{work.title}</Link>
           </Typography>
         </ListItem>)}
+
     </List>
+
   </article>
 )
 export default Portfolio
