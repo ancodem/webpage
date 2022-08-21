@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import AddIcon from '@mui/icons-material/Add'
+import { Chip, Input } from '@mui/material'
 import { useActions, useAppSelector } from 'hooks'
-import { InputField } from 'style/reusableSC'
 import { StackType } from 'store/reducers/reducer.types'
-import { Skill, SkillBox } from './styles'
+import { SkillBox } from './styles'
 
 const Skills: React.FC = () => {
   // STATE ------------------------------------------------------------------>
@@ -28,17 +28,17 @@ const Skills: React.FC = () => {
   return (
     <SkillBox>
       {userStack.map((s: StackType) =>
-        <Skill key={s.id} label={s.technologyName} />
+        <Chip key={s.id} label={s.technologyName} />
       )}
       {isInEditingMode
-        ? <InputField
+        ? <Input
           autoFocus
           onKeyDown={handleSubmit}
           onChange={(e) => updateInput(e.target.value)}
           value={input}
           placeholder='skill'
         />
-        : <Skill label={<AddIcon />} onClick={() => toggleEditingMode(true)} />}
+        : <Chip label={<AddIcon />} onClick={() => toggleEditingMode(true)} />}
     </SkillBox>
   )
 }
