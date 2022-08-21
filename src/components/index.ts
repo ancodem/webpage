@@ -1,6 +1,9 @@
 import Header from './Header'
+import Portfolio from './Portfolio'
+import Experience from './Experience'
 
-// eslint-disable-next-line
 export {
   Header,
+  Portfolio,
+  Experience,
 }
