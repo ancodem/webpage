@@ -1,7 +1,16 @@
 import React from 'react'
+import { Header } from 'components'
+import { Box } from '@mui/material'
 
 const App: React.FC = () => (
-  <h1> hello world</h1>
+  <>
+    <Header />
+    <main>
+      <Box>
+        hello
+      </Box>
+    </main>
+  </>
 )
 
 export default App

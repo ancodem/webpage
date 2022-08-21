@@ -1,3 +1,13 @@
-export interface StateType {
-  input: string
+export interface StackType {
+  id: number
+  technologyName: string
+  yearsOfExperience: number
 }
+
+export interface StateType {
+  userName: string
+  userStack: Array<StackType>
+  userAvatar: string
+  location: string
+}
+
