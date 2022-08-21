@@ -25,12 +25,14 @@ const Skills: React.FC = () => {
     }
   }
 
+  // JSX -------------------------------------------------------------------->
   return (
     <SkillBox>
       {userStack.map((s: StackType) =>
-        <Chip key={s.id} label={s.technologyName} />
+        <Chip key={s.id} label={s.technologyName} /> /* STACK ============> */
       )}
-      {isInEditingMode
+
+      {isInEditingMode /* ADD BUTTON =====================================> */
         ? <Input
           autoFocus
           onKeyDown={handleSubmit}
@@ -39,6 +41,7 @@ const Skills: React.FC = () => {
           placeholder='skill'
         />
         : <Chip label={<AddIcon />} onClick={() => toggleEditingMode(true)} />}
+
     </SkillBox>
   )
 }

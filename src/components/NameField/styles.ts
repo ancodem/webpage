@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { Typography, Input } from '@mui/material'
 
-export const Name = styled(Typography)(({ theme }) => ({
+export const Name = styled(Typography)(() => ({
   alignItems: 'center',
   fontWeight: '500',
   lineHeight: '48px',
@@ -14,7 +14,7 @@ export const Name = styled(Typography)(({ theme }) => ({
   },
 })) as typeof Typography
 
-export const NameInput = styled(Input)(({ theme }) => ({
+export const NameInput = styled(Input)(() => ({
   fontWeight: '500',
   maxHeight: '48px',
   fontSize: '40px',
