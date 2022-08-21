@@ -12,7 +12,7 @@ const NameField: React.FC = () => {
 
   // CONTROLS --------------------------------------------------------------->
   const { changeName } = useActions()
-  const handleConfirmation = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleConfirmation: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
     if (e.keyCode === 13) {
       changeName(input)
       updateInput('')

@@ -7,5 +7,5 @@ export const InputField = styled(Input)(({ theme }) => ({
   fontSize: '14px',
   height: '24px',
   backgroundColor: '#e2e3e3'
-})) as typeof Input
+}))
 
