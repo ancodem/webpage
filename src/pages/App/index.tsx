@@ -1,10 +1,15 @@
 import React from 'react'
 import { Header } from 'components'
+import { Box } from '@mui/material'
 
 const App: React.FC = () => (
   <>
     <Header />
-    <h1> hello world</h1>
+    <main>
+      <Box>
+        hello
+      </Box>
+    </main>
   </>
 )
 
