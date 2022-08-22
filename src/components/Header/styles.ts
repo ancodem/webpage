@@ -1,9 +1,8 @@
-import styled from '@emotion/styled'
-import { Box, Avatar, Link } from '@mui/material'
+import { styled, Box, Avatar, Link } from '@mui/material'
 
-export const HeaderContainer = styled(Box)(() => ({
+export const HeaderContainer = styled(Box)(({ theme }) => ({
   padding: '40px 156px 16px 156px',
-  backgroundColor: '#f0f1f2',
+  backgroundColor: theme.palette.neutral.main,
   display: 'flex',
   flexDirection: 'row',
 })) as typeof Box
@@ -21,7 +20,7 @@ export const UserAvatar = styled(Avatar)(() => ({
   border: 'solid 4px white',
 })) as typeof Avatar
 
-export const PrintInfo = styled(Link)(() => ({
+export const PrintInfo = styled(Link)(({ theme }) => ({
   display: 'flex',
   gap: '8px',
   fontWeight: '400',
@@ -33,6 +32,6 @@ export const PrintInfo = styled(Link)(() => ({
 
   '&:hover': {
     cursor: 'pointer',
-    color: '#EB5757',
+    color: theme.palette.hover.main,
   },
 })) as typeof Link

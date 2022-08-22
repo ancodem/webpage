@@ -1,5 +1,4 @@
-import styled from '@emotion/styled'
-import { Box } from '@mui/material'
+import { styled, Box } from '@mui/material'
 import Cn from '@mui/material/Container'
 
 export const Container = styled(Box)(() => ({

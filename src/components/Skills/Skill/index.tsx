@@ -15,24 +15,33 @@ const Skill: React.FC<SkillProps> = ({ label, id }) => {
   const [isVisible, toggleVisible] = useState(false)
 
   // LOGIC ------------------------------------------------------------------>
-  const handleDelition: React.MouseEventHandler<SVGSVGElement> = () => {
-    deleteTechnology(id)
-  }
+  const handleDelition
+    : React.MouseEventHandler<SVGSVGElement> =
+    () => deleteTechnology(id)
+
+
+  const handleHover = (isHovering: boolean)
+    : React.MouseEventHandler<HTMLElement> =>
+    () => toggleVisible(isHovering)
+
+  const handleVisibility = (isSeen: boolean)
+    : React.MouseEventHandler<SVGSVGElement> =>
+    () => toggleVisible(isSeen)
 
   // JSX -------------------------------------------------------------------->
   return (
     <article style={{ position: 'relative' }}>
 
       <Chip
-        onMouseEnter={() => toggleVisible(true)}
-        onMouseLeave={() => toggleVisible(false)}
+        onMouseEnter={handleHover(true)}
+        onMouseLeave={handleHover(false)}
         label={label}
       />
       {
         isVisible
           ? < DeleteIcon
-            onMouseEnter={() => toggleVisible(true)}
-            onMouseLeave={() => toggleVisible(false)}
+            onMouseEnter={handleVisibility(true)}
+            onMouseLeave={handleVisibility(false)}
             onClick={handleDelition}
           />
           : null
