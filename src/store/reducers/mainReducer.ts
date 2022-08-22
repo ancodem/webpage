@@ -26,6 +26,13 @@ const mainSlice = createSlice({
 
     addTechnology: (state, action: PayloadAction<StackType>) => {
       state.userStack.push({ ...action.payload })
+    },
+
+    deleteTechnology: (state, action: PayloadAction<number>) => {
+      const toBeDeleted = state.userStack.findIndex(
+        s => s.id === action.payload
+      )
+      state.userStack.splice(toBeDeleted, 1)
     }
   },
 })
