@@ -15,6 +15,10 @@ const Skill: React.FC<SkillProps> = ({ label, id }) => {
   const [isVisible, toggleVisible] = useState(false)
 
   // LOGIC ------------------------------------------------------------------>
+  const handleHover: React.MouseEventHandler<HTMLElement> = ({ foo }: bolean) => {
+    toggleVisible(foo)
+  }
+
   const handleDelition: React.MouseEventHandler<HTMLDivElement> = () => {
     deleteTechnology(id)
   }
@@ -24,17 +28,12 @@ const Skill: React.FC<SkillProps> = ({ label, id }) => {
     <article>
 
       <Chip
-        onMouseEnter={() => toggleVisible(true)}
-        onMouseLeave={() => toggleVisible(false)}
+        onMouseEnter={() => handleHover(true)}
+
         label={label}
         onClick={handleDelition}
       />
-      {
-        isVisible
-          ? < DeleteIcon />
-          : null
-      }
-
+      < DeleteIcon />
 
     </article>
   )
