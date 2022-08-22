@@ -18,7 +18,7 @@ declare module '@mui/material/styles/createPalette' {
 // THEME -------------------------------------------------------------------->
 const theme = createTheme({
   palette: {
-    neutral: { main: '#B3BAC0' },
+    neutral: { main: '#f0f1f2' },
     hover: { main: '#EB5757' },
     link: { main: '#3483CC' }
   },

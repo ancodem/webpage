@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@mui/material'
 
-import { Header, Portfolio, Experience } from 'components'
+import { Header, Portfolio, Experience, BlockQuote } from 'components'
 
 import { ContentBlock, Container, ContentWrapper, MainContent } from './styles'
 
@@ -13,15 +13,21 @@ const App: React.FC = () => (
 
       {/* LEFT_SIDE =======================================================> */}
       <ContentWrapper >
-        <ContentBlock sx={{ justifyContent: 'flex-end', }} >
 
+        <ContentBlock sx={{ justifyContent: 'flex-end', }} >
           <Portfolio />
           <Experience />
         </ContentBlock>
 
-        <ContentBlock sx={{ justifyContent: 'flex-end', }} >
-          <Portfolio />
-          <Experience />
+        <ContentBlock sx={{ justifyContent: 'flex-end' }} >
+          <BlockQuote
+            title='The Most Amaizing...'
+            quote='The only true wisdom is in knowing you know nothing...'
+          />
+          <BlockQuote
+            title='In clients I look for...'
+            quote='There is only one good, knowledge, and one evil, ignorance.'
+          />
         </ContentBlock>
 
       </ContentWrapper>
@@ -35,7 +41,7 @@ const App: React.FC = () => (
         <ContentBlock>
           <Box
             sx={{
-              backgroundColor: 'gray',
+              backgroundColor: 'lime',
               width: '600px',
               height: '300px',
               borderRadius: '6px',
