@@ -12,7 +12,15 @@ export const CheckIcon = styled(CheckCircleIcon)(() => ({
 }))
 
 export const DeleteIcon = styled(Cancel)(({ theme }) => ({
+  position: 'absolute',
+  zIndex: '2',
+  top: '-8px',
+  right: '-9px',
   height: '16px',
   widht: '16px',
   color: theme.palette.hover.main,
+
+  '&:hover': {
+    cursor: 'pointer',
+  },
 })) 

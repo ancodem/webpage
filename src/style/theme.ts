@@ -76,7 +76,7 @@ const theme = createTheme({
 
           '&:hover': {
             backgroundColor: '#666666',
-            cursor: 'pointer',
+            cursor: 'default',
           },
         }
       }
