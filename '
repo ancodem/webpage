@@ -1,0 +1,42 @@
+import React, { useState } from 'react'
+import { Chip } from '@mui/material'
+
+import { useActions } from 'hooks'
+import { DeleteIcon } from 'style/icons'
+
+interface SkillProps {
+  label: string
+  id: number
+}
+
+const Skill: React.FC<SkillProps> = ({ label, id }) => {
+  // STATE ------------------------------------------------------------------>
+  const { deleteTechnology } = useActions()
+  const [isVisible, toggleVisible] = useState(false)
+
+  // LOGIC ------------------------------------------------------------------>
+  const handleHover: React.MouseEventHandler<HTMLElement> = ({ foo }: bolean) => {
+    toggleVisible(foo)
+  }
+
+  const handleDelition: React.MouseEventHandler<HTMLDivElement> = () => {
+    deleteTechnology(id)
+  }
+
+  // JSX -------------------------------------------------------------------->
+  return (
+    <article>
+
+      <Chip
+        onMouseEnter={() => handleHover(true)}
+
+        label={label}
+        onClick={handleDelition}
+      />
+      < DeleteIcon />
+
+    </article>
+  )
+}
+
+export default Skill

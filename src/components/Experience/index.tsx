@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, List, ListItem, Typography } from '@mui/material'
+import { Box, List, ListItem, Typography } from '@mui/material'
 
 import { StackType } from 'store/reducers/reducer.types'
 import { useAppSelector } from 'hooks'
@@ -13,7 +13,7 @@ const Experience: React.FC = () => {
 
   // JSX -------------------------------------------------------------------->
   return (
-    <article>
+    <Box sx={{ minWidth: '300px' }}>
 
       <Typography variant="h4">
         Experience
@@ -43,7 +43,7 @@ const Experience: React.FC = () => {
         )}
       </List>
 
-    </article>
+    </Box>
   )
 }
 

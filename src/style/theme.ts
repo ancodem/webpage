@@ -1,6 +1,28 @@
 import { createTheme } from '@mui/material/styles'
 
+// EXTENDING THE PALETTE WIHT MY OWN TYPES ---------------------------------->
+declare module '@mui/material/styles/createPalette' {
+  interface Palette {
+    neutral: { main: string },
+    hover: { main: string },
+    link: { main: string },
+  }
+
+  interface PaletteOptions {
+    neutral?: { main: string }
+    hover?: { main: string },
+    link?: { main: string },
+  }
+}
+
+// THEME -------------------------------------------------------------------->
 const theme = createTheme({
+  palette: {
+    neutral: { main: '#B3BAC0' },
+    hover: { main: '#EB5757' },
+    link: { main: '#3483CC' }
+  },
+
   typography: {
     h4: {
       fontSize: '24px',
@@ -54,7 +76,7 @@ const theme = createTheme({
 
           '&:hover': {
             backgroundColor: '#666666',
-            cursor: 'pointer',
+            cursor: 'default',
           },
         }
       }
@@ -71,5 +93,7 @@ const theme = createTheme({
       }
     },
   }
-})
+}
+)
+
 export default theme

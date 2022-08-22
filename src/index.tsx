@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
-import App from 'pages/App'
 import { Provider } from 'react-redux'
-import { store } from 'store/store'
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from '@mui/material/styles'
+
+import App from 'pages/App'
+import { store } from 'store/store'
 import theme from 'style/theme'
+import './index.css'
 
 
 const root = ReactDOM.createRoot(

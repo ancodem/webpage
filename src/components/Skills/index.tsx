@@ -4,6 +4,7 @@ import { Chip, Input } from '@mui/material'
 import { useActions, useAppSelector } from 'hooks'
 import { StackType } from 'store/reducers/reducer.types'
 import { SkillBox } from './styles'
+import Skill from './Skill'
 
 const Skills: React.FC = () => {
   // STATE ------------------------------------------------------------------>
@@ -28,8 +29,8 @@ const Skills: React.FC = () => {
   // JSX -------------------------------------------------------------------->
   return (
     <SkillBox>
-      {userStack.map((s: StackType) =>
-        <Chip key={s.id} label={s.technologyName} /> /* STACK ============> */
+      {userStack.map((s: StackType) => /* STACK ==========================> */
+        <Skill key={s.id} id={s.id} label={s.technologyName} />
       )}
 
       {isInEditingMode /* ADD BUTTON =====================================> */
