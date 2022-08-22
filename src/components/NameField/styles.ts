@@ -16,6 +16,7 @@ export const Name = styled(Typography)(() => ({
 
 export const NameInput = styled(Input)(() => ({
   fontWeight: '500',
+  height: '48px',
   maxHeight: '48px',
   fontSize: '40px',
   width: '360px',
