@@ -8,7 +8,38 @@ const theme = createTheme({
       lineHeight: '24px',
     },
   },
+
   components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: '#3483CC',
+          transitionDuration: '1s',
+          textDecoration: 'none',
+          fontWeight: '400',
+          fontSize: '16px',
+          lineHeight: '20px',
+
+          '&:hover': {
+            color: '#EB5757'
+          },
+        },
+      },
+    },
+
+    MuiListItem: {
+      styleOverrides: {
+        root: {
+          flexWrap: 'nowrap',
+          '&::before': {
+            content: '"–"',
+            margin: ' 2px 8px 0 0',
+            alignSelf: 'flex-start',
+          }
+        },
+      },
+    },
+
     MuiChip: {
       styleOverrides: {
         root: {
@@ -25,10 +56,10 @@ const theme = createTheme({
             backgroundColor: '#666666',
             cursor: 'pointer',
           },
-
         }
       }
     },
+
     MuiInput: {
       styleOverrides: {
         root: {
