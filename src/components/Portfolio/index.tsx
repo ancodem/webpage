@@ -1,6 +1,5 @@
 import React from 'react'
-import { List, ListItem, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Link, List, ListItem, Typography } from '@mui/material'
 
 const sampleWorks: Array<{ id: number, title: string }> = [
   { id: 0, title: 'Bootstrap 4 Material Design (Sample Link)' },
@@ -18,9 +17,7 @@ const Portfolio: React.FC = () => (
       {sampleWorks.map(work =>
 
         <ListItem key={work.id}>
-          <Typography>
-            <Link to='#'>{work.title}</Link>
-          </Typography>
+          <Link href={work.title}>{work.title}</Link>
         </ListItem>)}
 
     </List>
