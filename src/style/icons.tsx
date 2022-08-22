@@ -11,8 +11,7 @@ export const CheckIcon = styled(CheckCircleIcon)(() => ({
   widht: '16px',
 }))
 
-export const CancelIcon = styled(Cancel)(() => ({
+export const DeleteIcon = styled(Cancel)(() => ({
   height: '16px',
   widht: '16px',
-
 }))
