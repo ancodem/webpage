@@ -7,6 +7,7 @@ interface QuoteProps {
   title: string
   quote: string
 }
+
 const BlockQuote: React.FC<QuoteProps> = ({ title, quote }) => (
   <Box
     sx={{

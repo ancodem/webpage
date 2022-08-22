@@ -12,13 +12,19 @@ const NameField: React.FC = () => {
   const { changeName } = useActions()
 
   // LOGIC ------------------------------------------------------------------>
-  const handleConfirmation: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
-    if (e.keyCode === 13) {
-      changeName(input)
-      updateInput('')
-      toggleEditingMode(false)
+  const handleConfirmation
+    : React.KeyboardEventHandler<HTMLInputElement> =
+    (e) => {
+      if (e.keyCode === 13) {
+        changeName(input)
+        updateInput('')
+        toggleEditingMode(false)
+      }
     }
-  }
+
+  const handleChange
+    : React.ChangeEventHandler<HTMLInputElement> =
+    (e) => updateInput(e.target.value)
 
   // JSX -------------------------------------------------------------------->
   return (
@@ -29,7 +35,7 @@ const NameField: React.FC = () => {
           <NameInput
             autoFocus
             required
-            onChange={(e) => updateInput(e.target.value)}
+            onChange={handleChange}
             onKeyDown={handleConfirmation}
             value={input}
             placeholder={userName}

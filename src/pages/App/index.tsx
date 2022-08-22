@@ -1,9 +1,13 @@
 import React from 'react'
 import { Box } from '@mui/material'
 
-import { Header, Portfolio, Experience, BlockQuote } from 'components'
+import {
+  Header, Portfolio, Experience, BlockQuote
+} from 'components'
 
-import { ContentBlock, Container, ContentWrapper, MainContent } from './styles'
+import {
+  ContentBlock, Container, ContentWrapper, MainContent
+} from './styles'
 
 const App: React.FC = () => (
   <Container>
@@ -11,7 +15,7 @@ const App: React.FC = () => (
 
     <MainContent>
 
-      {/* LEFT_SIDE =======================================================> */}
+      {/* LEFT_SIDE =====================================================> */}
       <ContentWrapper >
 
         <ContentBlock sx={{ justifyContent: 'flex-end', }} >
@@ -32,7 +36,7 @@ const App: React.FC = () => (
 
       </ContentWrapper>
 
-      {/* RIGHT_SIDE ======================================================> */}
+      {/* RIGHT_SIDE ====================================================> */}
       <ContentWrapper >
         <ContentBlock >
           <Portfolio />
