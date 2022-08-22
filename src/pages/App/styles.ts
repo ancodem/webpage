@@ -14,12 +14,11 @@ export const MainContent = styled(Box)(() => ({
   margin: '0',
   gap: '0',
   alignSelf: 'stretch',
-  display: 'fex',
+  display: 'flex',
   flex: '1 1',
 })) as typeof Box
 
 export const ContentWrapper = styled(Cn)(() => ({
-  width: '50%',
   display: 'flex',
   gap: '80px',
   flexDirection: 'column',
