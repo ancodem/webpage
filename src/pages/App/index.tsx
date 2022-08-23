@@ -1,8 +1,7 @@
 import React from 'react'
-import { Box } from '@mui/material'
 
 import {
-  Header, Portfolio, Experience, BlockQuote
+  Header, Portfolio, Experience, BlockQuote, GoogleMap
 } from 'components'
 
 import {
@@ -38,22 +37,16 @@ const App: React.FC = () => (
 
       {/* RIGHT_SIDE ====================================================> */}
       <ContentWrapper >
+
         <ContentBlock >
           <Portfolio />
           <Experience />
         </ContentBlock>
+
         <ContentBlock>
-          <Box
-            sx={{
-              backgroundColor: 'lime',
-              width: '600px',
-              height: '300px',
-              borderRadius: '6px',
-            }}
-          >
-            map
-          </Box>
+          <GoogleMap />
         </ContentBlock>
+
       </ContentWrapper>
 
     </MainContent>
