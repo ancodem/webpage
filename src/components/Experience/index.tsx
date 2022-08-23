@@ -1,15 +1,19 @@
-import React from 'react'
-import { Box, List, ListItem, Typography } from '@mui/material'
+import React, { useState, useMemo } from 'react'
+import { Box, List, Input, ListItem, Typography } from '@mui/material'
 
 import { StackType } from 'store/reducers/reducer.types'
-import { useAppSelector } from 'hooks'
+import { useActions, useAppSelector } from 'hooks'
+import ExpItem from './ExpItem'
 
 const Experience: React.FC = () => {
   // STATE ------------------------------------------------------------------>
   const { userStack } = useAppSelector(state => state.main)
-  const sortedStack = [...userStack].sort(
+
+  // LOGIC ------------------------------------------------------------------>
+  const sortedStack = useMemo(() => [...userStack].sort(
     (s1, s2) => s2.yearsOfExperience - s1.yearsOfExperience
-  )
+  ), [userStack])
+
 
   // JSX -------------------------------------------------------------------->
   return (
@@ -21,24 +25,12 @@ const Experience: React.FC = () => {
 
       <List>
         {sortedStack.map((s: StackType) =>
-
-          <ListItem key={s.id}>
-            <Typography sx={{ fontWeight: '700' }}>
-              {s.technologyName}
-            </Typography>
-
-            <Typography
-              sx={{
-                color: '#3483CC',
-                textDecoration: 'underline dotted',
-                marginLeft: '.5em',
-                '&:hover': {
-                  color: '#EB5757'
-                }
-              }}>
-              {s.yearsOfExperience} years
-            </Typography>
-          </ListItem>
+          <ExpItem
+            key={s.id}
+            id={s.id}
+            name={s.technologyName}
+            years={s.yearsOfExperience}
+          />
 
         )}
       </List>

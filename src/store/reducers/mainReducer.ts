@@ -33,7 +33,15 @@ const mainSlice = createSlice({
         s => s.id === action.payload
       )
       state.userStack.splice(toBeDeleted, 1)
-    }
+    },
+
+    updateExperience: (
+      state, action: PayloadAction<{ expId: number, expInput: number }>) => {
+      const toBeChanged = state.userStack.findIndex(
+        s => s.id === action.payload.expId
+      )
+      state.userStack[toBeChanged].yearsOfExperience = action.payload.expInput
+    },
   },
 })
 /* eslint-enable no-param-reassign */
