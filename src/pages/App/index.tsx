@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
+import { Grid, Box, Typography } from '@mui/material'
 
 import {
   Header, Portfolio, Experience, BlockQuote, GoogleMap, ContentSection
@@ -7,41 +7,60 @@ import {
 import { Container, MainContent } from './styles'
 
 const App: React.FC = () => (
-  <Container>
+  <Box component="main">
     <Header />
 
-    <MainContent>
+    <Grid
+      container
+      spacing={{ xs: 2, md: 3 }}
+      columns={{ xs: 4, sm: 8, md: 12 }}
+      sx={{
+        margin: '56px 156px',
+        textAlign: 'center',
+      }}
 
-      <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
+    >
+
+      <Grid item xs={3}>
         <ContentSection title='Portfolio'>
           <Portfolio />
         </ContentSection>
+      </Grid>
 
+      <Grid item xs={3}>
         <ContentSection title='Experience'>
           <Experience />
         </ContentSection>
+      </Grid>
 
+      <Grid item xs={3}>
         <ContentSection title='Portfolio'>
           <Portfolio />
         </ContentSection>
+      </Grid>
 
-        <Box sx={{ backgroundColor: 'red', gap: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'stretch' }}>
-          <ContentSection title='Availability'>
-            <Box>
-              full time
-            </Box>
-          </ContentSection>
-          <ContentSection title='Preferred environment'>
-            <Typography>
-              GitHub, MacOS, OSX
-            </Typography>
-          </ContentSection>
-        </Box>
+      <Grid item xs={3}>
+        <Grid container direction="column" spacing={4}>
 
-      </Box >
+          <Grid item xs={6}>
+            <ContentSection title='Availability'>
+              <Box>
+                full time
+              </Box>
+            </ContentSection>
+          </Grid>
 
-      <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
+          <Grid item xs={6}>
+            <ContentSection title='Preferred environment'>
+              <Typography>
+                GitHub, MacOS, OSX
+              </Typography>
+            </ContentSection>
+          </Grid>
 
+        </Grid>
+      </Grid>
+      <Grid item xs={3}>
         <ContentSection
           boxSX={{ textAlign: 'center' }}
           title='The Most Amaizing...'>
@@ -49,7 +68,9 @@ const App: React.FC = () => (
             The only true wisdom is in knowing you know nothing...
           </BlockQuote>
         </ContentSection>
+      </Grid>
 
+      <Grid item xs={3}>
         <ContentSection
           boxSX={{ textAlign: 'center' }}
           title='In clients I look for...'>
@@ -57,13 +78,14 @@ const App: React.FC = () => (
             There is only one good, knowledge, and one evil, ignorance.
           </BlockQuote>
         </ContentSection>
+      </Grid>
 
+      <Grid item xs={6}>
         <GoogleMap />
+      </Grid>
+    </Grid>
 
-      </Box>
-    </MainContent>
-
-  </Container>
+  </Box >
 )
 
 export default App
