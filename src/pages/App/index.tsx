@@ -1,12 +1,10 @@
 import React from 'react'
+import { Box, Typography } from '@mui/material'
 
 import {
   Header, Portfolio, Experience, BlockQuote, GoogleMap, ContentSection
 } from 'components'
-
-import {
-  ContentBlock, Container, ContentWrapper, MainContent
-} from './styles'
+import { Container, MainContent } from './styles'
 
 const App: React.FC = () => (
   <Container>
@@ -14,8 +12,7 @@ const App: React.FC = () => (
 
     <MainContent>
 
-      <ContentWrapper >
-
+      <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
         <ContentSection title='Portfolio'>
           <Portfolio />
         </ContentSection>
@@ -24,33 +21,46 @@ const App: React.FC = () => (
           <Experience />
         </ContentSection>
 
-        <ContentBlock sx={{ justifyContent: 'flex-end' }} >
-          <BlockQuote
-            title='The Most Amaizing...'
-            quote='The only true wisdom is in knowing you know nothing...'
-          />
-          <BlockQuote
-            title='In clients I look for...'
-            quote='There is only one good, knowledge, and one evil, ignorance.'
-          />
-        </ContentBlock>
-
-      </ContentWrapper>
-
-      {/* RIGHT_SIDE ====================================================> */}
-      <ContentWrapper >
-
-        <ContentBlock >
+        <ContentSection title='Portfolio'>
           <Portfolio />
-          <Experience />
-        </ContentBlock>
+        </ContentSection>
 
-        <ContentBlock>
-          <GoogleMap />
-        </ContentBlock>
+        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <ContentSection title='Availability'>
+            <Typography>
+              full time
+            </Typography>
+          </ContentSection>
+          <ContentSection title='Preferred environment'>
+            <Typography>
+              GitHub, MacOS, OSX
+            </Typography>
+          </ContentSection>
+        </Box>
 
-      </ContentWrapper>
+      </Box >
 
+      <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
+
+        <ContentSection
+          boxSX={{ textAlign: 'center' }}
+          title='The Most Amaizing...'>
+          <BlockQuote>
+            The only true wisdom is in knowing you know nothing...
+          </BlockQuote>
+        </ContentSection>
+
+        <ContentSection
+          boxSX={{ textAlign: 'center' }}
+          title='In clients I look for...'>
+          <BlockQuote>
+            There is only one good, knowledge, and one evil, ignorance.
+          </BlockQuote>
+        </ContentSection>
+
+        <GoogleMap />
+
+      </Box>
     </MainContent>
 
   </Container>
