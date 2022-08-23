@@ -8,14 +8,14 @@ export const Container = styled(Box)(() => ({
   height: '100vh',
 }))
 
-export const MainContent = styled(Box)(() => ({
+export const MainContent = styled(Cn)(() => ({
   display: 'flex',
   flexDirection: 'column',
+  alignSelf: 'center',
   justifyContent: 'center',
   gap: '36px',
-  alignContent: 'center',
   padding: '56px 156px',
   margin: '0',
   flex: '1 1',
-})) as typeof Box
+})) as typeof Cn
 

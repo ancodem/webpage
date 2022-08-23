@@ -25,11 +25,11 @@ const App: React.FC = () => (
           <Portfolio />
         </ContentSection>
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <Box sx={{ backgroundColor: 'red', gap: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'stretch' }}>
           <ContentSection title='Availability'>
-            <Typography>
+            <Box>
               full time
-            </Typography>
+            </Box>
           </ContentSection>
           <ContentSection title='Preferred environment'>
             <Typography>
