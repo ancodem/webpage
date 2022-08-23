@@ -1,57 +1,91 @@
 import React from 'react'
+import { Grid, Box, Typography } from '@mui/material'
 
 import {
-  Header, Portfolio, Experience, BlockQuote, GoogleMap
+  Header, Portfolio, Experience, BlockQuote, GoogleMap, ContentSection
 } from 'components'
-
-import {
-  ContentBlock, Container, ContentWrapper, MainContent
-} from './styles'
+import { Container, MainContent } from './styles'
 
 const App: React.FC = () => (
-  <Container>
+  <Box component="main">
     <Header />
 
-    <MainContent>
+    <Grid
+      container
+      spacing={{ xs: 2, md: 3 }}
+      columns={{ xs: 4, sm: 8, md: 12 }}
+      sx={{
+        margin: '56px 156px',
+        textAlign: 'center',
+      }}
 
-      {/* LEFT_SIDE =====================================================> */}
-      <ContentWrapper >
+    >
 
-        <ContentBlock sx={{ justifyContent: 'flex-end', }} >
+      <Grid item xs={3}>
+        <ContentSection title='Portfolio'>
           <Portfolio />
+        </ContentSection>
+      </Grid>
+
+      <Grid item xs={3}>
+        <ContentSection title='Experience'>
           <Experience />
-        </ContentBlock>
+        </ContentSection>
+      </Grid>
 
-        <ContentBlock sx={{ justifyContent: 'flex-end' }} >
-          <BlockQuote
-            title='The Most Amaizing...'
-            quote='The only true wisdom is in knowing you know nothing...'
-          />
-          <BlockQuote
-            title='In clients I look for...'
-            quote='There is only one good, knowledge, and one evil, ignorance.'
-          />
-        </ContentBlock>
-
-      </ContentWrapper>
-
-      {/* RIGHT_SIDE ====================================================> */}
-      <ContentWrapper >
-
-        <ContentBlock >
+      <Grid item xs={3}>
+        <ContentSection title='Portfolio'>
           <Portfolio />
-          <Experience />
-        </ContentBlock>
+        </ContentSection>
+      </Grid>
 
-        <ContentBlock>
-          <GoogleMap />
-        </ContentBlock>
+      <Grid item xs={3}>
+        <Grid container direction="column" spacing={4}>
 
-      </ContentWrapper>
+          <Grid item xs={6}>
+            <ContentSection title='Availability'>
+              <Box>
+                full time
+              </Box>
+            </ContentSection>
+          </Grid>
 
-    </MainContent>
+          <Grid item xs={6}>
+            <ContentSection title='Preferred environment'>
+              <Typography>
+                GitHub, MacOS, OSX
+              </Typography>
+            </ContentSection>
+          </Grid>
 
-  </Container>
+        </Grid>
+      </Grid>
+      <Grid item xs={3}>
+        <ContentSection
+          boxSX={{ textAlign: 'center' }}
+          title='The Most Amaizing...'>
+          <BlockQuote>
+            The only true wisdom is in knowing you know nothing...
+          </BlockQuote>
+        </ContentSection>
+      </Grid>
+
+      <Grid item xs={3}>
+        <ContentSection
+          boxSX={{ textAlign: 'center' }}
+          title='In clients I look for...'>
+          <BlockQuote>
+            There is only one good, knowledge, and one evil, ignorance.
+          </BlockQuote>
+        </ContentSection>
+      </Grid>
+
+      <Grid item xs={6}>
+        <GoogleMap />
+      </Grid>
+    </Grid>
+
+  </Box >
 )
 
 export default App

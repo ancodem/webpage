@@ -14,9 +14,10 @@ export const TechnologyName = styled(Typography)(() => ({
 })) as typeof Typography
 
 export const EpxerienceInput = styled(Input)(() => ({
-  marginLeft: '.5em',
   lineHeight: '20px',
   fontSize: '16px',
+  marginLeft: '6px',
+  width: '50px'
 }))
 
 export const ExperienceItem = styled(Input)(() => ({
