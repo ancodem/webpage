@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-  Header, Portfolio, Experience, BlockQuote, GoogleMap
+  Header, Portfolio, Experience, BlockQuote, GoogleMap, ContentSection
 } from 'components'
 
 import {
@@ -17,8 +17,13 @@ const App: React.FC = () => (
       {/* LEFT_SIDE =====================================================> */}
       <ContentWrapper >
 
-        <ContentBlock sx={{ justifyContent: 'flex-end', }} >
+        <ContentSection
+          title='Portfolio'
+        >
           <Portfolio />
+        </ContentSection>
+
+        <ContentBlock sx={{ justifyContent: 'flex-end', }} >
           <Experience />
         </ContentBlock>
 
