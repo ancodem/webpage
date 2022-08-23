@@ -1,8 +1,8 @@
-import React, { useState, useMemo } from 'react'
-import { Box, List, Input, ListItem, Typography } from '@mui/material'
+import React, { useMemo } from 'react'
+import { List } from '@mui/material'
 
+import { useAppSelector } from 'hooks'
 import { StackType } from 'store/reducers/reducer.types'
-import { useActions, useAppSelector } from 'hooks'
 import ExpItem from './ExpItem'
 
 const Experience: React.FC = () => {
@@ -17,25 +17,17 @@ const Experience: React.FC = () => {
 
   // JSX -------------------------------------------------------------------->
   return (
-    <Box sx={{ minWidth: '300px' }}>
+    <List>
+      {sortedStack.map((s: StackType) =>
+        <ExpItem
+          key={s.id}
+          id={s.id}
+          name={s.technologyName}
+          years={s.yearsOfExperience}
+        />
 
-      <Typography variant="h4">
-        Experience
-      </Typography>
-
-      <List>
-        {sortedStack.map((s: StackType) =>
-          <ExpItem
-            key={s.id}
-            id={s.id}
-            name={s.technologyName}
-            years={s.yearsOfExperience}
-          />
-
-        )}
-      </List>
-
-    </Box>
+      )}
+    </List>
   )
 }
 

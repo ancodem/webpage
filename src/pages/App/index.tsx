@@ -14,18 +14,15 @@ const App: React.FC = () => (
 
     <MainContent>
 
-      {/* LEFT_SIDE =====================================================> */}
       <ContentWrapper >
 
-        <ContentSection
-          title='Portfolio'
-        >
+        <ContentSection title='Portfolio'>
           <Portfolio />
         </ContentSection>
 
-        <ContentBlock sx={{ justifyContent: 'flex-end', }} >
+        <ContentSection title='Experience'>
           <Experience />
-        </ContentBlock>
+        </ContentSection>
 
         <ContentBlock sx={{ justifyContent: 'flex-end' }} >
           <BlockQuote
