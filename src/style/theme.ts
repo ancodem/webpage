@@ -52,10 +52,13 @@ const theme = createTheme({
     MuiListItem: {
       styleOverrides: {
         root: {
-          flexWrap: 'nowrap',
+          flexWrap: 'wrap',
+          fontWeight: '400',
+          fontSize: '16px',
+          lineHeight: '20px',
           '&::before': {
             content: '"–"',
-            margin: ' 2px 8px 0 0',
+            margin: ' 1px 8px 0 0',
             alignSelf: 'flex-start',
           }
         },
