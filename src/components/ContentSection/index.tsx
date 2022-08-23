@@ -1,5 +1,7 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
+
+import { Section } from './styles'
 
 interface ContentProps {
   title: string
@@ -10,12 +12,12 @@ interface ContentProps {
 const ContentSection
   : React.FC<ContentProps> =
   ({ title, children, boxSX, titleSX }) => (
-    <Box component="section" sx={{ ...boxSX }}>
+    <Section component="section" sx={{ ...boxSX }}>
       <Typography variant="h4" sx={{ ...titleSX }}>
         {title}
       </Typography>
       {children}
-    </Box>
+    </Section>
   )
 
 export default ContentSection
