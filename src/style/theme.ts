@@ -84,17 +84,6 @@ const theme = createTheme({
         }
       }
     },
-
-    MuiInput: {
-      styleOverrides: {
-        root: {
-          fontWeight: '400',
-          fontSize: '14px',
-          height: '24px',
-          backgroundColor: '#e2e3e3'
-        }
-      }
-    },
   }
 }
 )
