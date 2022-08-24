@@ -2,25 +2,20 @@ import { styled } from '@mui/material'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import Cancel from '@mui/icons-material/Cancel'
 
-export const CheckIcon = styled(CheckCircleIcon)(() => ({
+export const CorrectIcon = styled(CheckCircleIcon)(() => ({
   color: '#33C127',
   position: 'absolute',
-  right: '0.5em',
-  top: '0.8em',
+  top: '16px',
+  right: '4px',
   height: '16px',
   widht: '16px',
 }))
 
-export const DeleteIcon = styled(Cancel)(({ theme }) => ({
+export const WrongIcon = styled(Cancel)(({ theme }) => ({
+  color: theme.palette.hover.main,
   position: 'absolute',
-  zIndex: '2',
-  top: '-8px',
-  right: '-9px',
+  top: '16px',
+  right: '4px',
   height: '16px',
   widht: '16px',
-  color: theme.palette.hover.main,
-
-  '&:hover': {
-    cursor: 'pointer',
-  },
-})) 
+}))

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Chip } from '@mui/material'
 
 import { useActions } from 'hooks'
-import { DeleteIcon } from 'style/icons'
+import DeleteIcon from './icons'
 
 interface SkillProps {
   label: string
