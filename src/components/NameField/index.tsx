@@ -1,47 +1,65 @@
 import React, { useState } from 'react'
 import { useAppSelector, useActions } from 'hooks'
-import { FormControl } from '@mui/material'
-import { CheckIcon } from 'style/icons'
-import { Name, NameInput } from './styles'
+import { Box, Typography } from '@mui/material'
+import { CorrectIcon, WrongIcon } from 'style/icons'
+
+import { FormikProps, useFormik } from 'formik'
+import { Name, NameInput, ErrorMessage } from './styles'
+import nameSchema from './schema'
+
+interface FormValues {
+  input: string
+}
 
 const NameField: React.FC = () => {
   // STATE ------------------------------------------------------------------>
   const { userName } = useAppSelector(state => state.main)
   const [isInEditingMode, toggleEditingMode] = useState(false)
-  const [input, updateInput] = useState('')
   const { changeName } = useActions()
 
   // LOGIC ------------------------------------------------------------------>
-  const handleConfirmation
-    : React.KeyboardEventHandler<HTMLInputElement> =
-    (e) => {
-      if (e.keyCode === 13) {
-        changeName(input)
-        updateInput('')
+  const {
+    values, errors, touched, handleSubmit, handleChange, handleBlur
+  }
+    : FormikProps<FormValues> =
+    useFormik<FormValues>({
+      initialValues: {
+        input: ''
+      },
+      validationSchema: nameSchema,
+      // eslint-disable-next-line
+      onSubmit: (values, actions) => {
+        changeName(values.input)
         toggleEditingMode(false)
+        actions.resetForm()
       }
-    }
-
-  const handleChange
-    : React.ChangeEventHandler<HTMLInputElement> =
-    (e) => updateInput(e.target.value)
+    })
 
   // JSX -------------------------------------------------------------------->
   return (
     <article>
 
       {isInEditingMode
-        ? <FormControl>
+        ? <Box
+          sx={{ position: 'relative' }}
+          component="form"
+          onSubmit={handleSubmit}>
           <NameInput
+            id='input'
             autoFocus
             required
             onChange={handleChange}
-            onKeyDown={handleConfirmation}
-            value={input}
+            onBlur={handleBlur}
+            value={values.input}
             placeholder={userName}
           />
-          <CheckIcon />
-        </FormControl>
+          {errors.input && touched.input
+            ? <WrongIcon /> : <CorrectIcon />}
+          {errors.input && touched.input
+            ? <ErrorMessage>{errors.input}</ErrorMessage>
+            : null
+          }
+        </Box>
         : <Name onClick={() => toggleEditingMode(true)}>{userName}</Name>
       }
 

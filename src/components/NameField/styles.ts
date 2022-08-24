@@ -1,5 +1,4 @@
-import styled from '@emotion/styled'
-import { Typography, Input } from '@mui/material'
+import { Typography, Input, styled } from '@mui/material'
 
 export const Name = styled(Typography)(() => ({
   alignItems: 'center',
@@ -20,4 +19,12 @@ export const NameInput = styled(Input)(() => ({
   maxHeight: '48px',
   fontSize: '40px',
   width: '360px',
-})) 
+}))
+
+export const ErrorMessage = styled(Typography)(({ theme }) => ({
+  color: theme.palette.hover.main,
+  position: 'absolute',
+  top: '16px',
+  right: '-100px',
+
+}))
