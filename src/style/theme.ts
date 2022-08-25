@@ -58,8 +58,7 @@ const theme = createTheme({
           lineHeight: '20px',
           '&::before': {
             content: '"–"',
-            margin: ' 1px 8px 0 0',
-            alignSelf: 'flex-start',
+            marginRight: '8px',
           }
         },
       },
