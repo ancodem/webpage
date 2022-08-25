@@ -1,12 +1,11 @@
-
 import * as yup from 'yup'
 
 const experienceSchema = yup.object().shape({
   input: yup
-    .string().trim()
+    .number().positive('Not allowed')
     .required('Field is empty')
-    .max(20, 'Too long')
-    .matches(/^[aA-zZ\s]+$/, 'Not allowed')
+    .min(0.1)
+    .max(70)
 })
 
 export type ExperienceSchemaType = typeof experienceSchema

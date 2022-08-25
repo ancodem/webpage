@@ -1,6 +1,9 @@
-import { NameSchemaType } from "./nameValidationSchema";
+import { NameSchemaType } from './nameValidationSchema';
+import { TechnologyNameSchemaType } from './technologyNameValidation'
+import { ExperienceSchemaType } from './experienceValidationSchema'
 
-// eslint-disable-next-line
 export type {
   NameSchemaType,
+  TechnologyNameSchemaType,
+  ExperienceSchemaType,
 }

@@ -4,7 +4,7 @@ const nameSchema = yup.object().shape({
   input: yup
     .string().trim()
     .required('Field is empty')
-    .max(20, 'Too long')
+    .max(50, 'Too long')
     .matches(/^[aA-zZ\s]+$/, 'Not allowed')
 })
 
