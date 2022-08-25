@@ -46,8 +46,6 @@ const Skill: React.FC<SkillProps> = ({ label, id }) => {
           />
           : null
       }
-
-
     </article>
   )
 }

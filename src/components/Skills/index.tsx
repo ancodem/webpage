@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import AddIcon from '@mui/icons-material/Add'
 import { Chip, Input } from '@mui/material'
+
+import { InputField } from 'components'
+import { technologyNameSchema } from 'validationSchemas'
 import { useActions, useAppSelector } from 'hooks'
 import { StackType } from 'store/reducers/reducer.types'
 import { SkillBox } from './styles'
@@ -11,20 +14,17 @@ const Skills: React.FC = () => {
   const { userStack } = useAppSelector(state => state.main)
   const { addTechnology } = useActions()
   const [isInEditingMode, toggleEditingMode] = useState(false)
-  const [input, updateInput] = useState('')
 
   // LOGIC ------------------------------------------------------------------>
-  const handleSubmit: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
-    if (e.keyCode === 13) {
-      addTechnology({
-        id: Date.now(),
-        technologyName: e.currentTarget.value,
-        yearsOfExperience: 0,
-      })
-      updateInput('')
-      toggleEditingMode(false)
-    }
-  }
+  const handleAddTechnology = useCallback((arg: string) => {
+    addTechnology(
+      { id: Date.now(), technologyName: arg, yearsOfExperience: 0 }
+    )
+  }, [])
+
+  const handleToggleEditing = useCallback(
+    (arg: boolean) => toggleEditingMode(arg), []
+  )
 
   // JSX -------------------------------------------------------------------->
   return (
@@ -34,12 +34,11 @@ const Skills: React.FC = () => {
       )}
 
       {isInEditingMode /* ADD BUTTON =====================================> */
-        ? <Input
-          autoFocus
-          onKeyDown={handleSubmit}
-          onChange={(e) => updateInput(e.target.value)}
-          value={input}
-          placeholder='skill'
+        ? <InputField
+          validationSchema={technologyNameSchema}
+          action={handleAddTechnology}
+          handleToggleEditing={handleToggleEditing}
+          placeholder=''
         />
         : <Chip label={<AddIcon />} onClick={() => toggleEditingMode(true)} />}
 
