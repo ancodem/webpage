@@ -3,7 +3,7 @@ import { useFormik, FormikProps } from 'formik'
 
 import { InputProps, FormValues } from './InputField.types'
 import {
-  CorrectIcon, WrongIcon, InputContainer, InputArea
+  CorrectIcon, WrongIcon, InputContainer, InputArea, WarningMessage
 } from './InputField.styles'
 
 export const InputField: React.FC<InputProps> = (
@@ -41,6 +41,10 @@ export const InputField: React.FC<InputProps> = (
       />
       {errors.input && touched.input
         ? <WrongIcon /> : <CorrectIcon />}
+      <WarningMessage>
+        {errors.input && touched.input
+          ? errors.input : null}
+      </WarningMessage>
     </InputContainer>
 
   )

@@ -4,5 +4,4 @@ import { styled, Box } from '@mui/material'
 export const Section = styled('section')(({ theme }) => ({
   maxWidth: '550px',
   margin: '0 20px',
-  border: 'solid 2px gray',
 })) as typeof Box
