@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { ListItem } from '@mui/material'
 
 import { useActions } from 'hooks'
+import { InputField } from 'components'
+import { experienceSchema } from 'validationSchemas'
 import {
   TechnologyName, YearsOfExperience, EpxerienceInput
 } from './styles'
@@ -17,28 +19,16 @@ const ExpItem: React.FC<ExperienceProps> =
 
     // STATE ---------------------------------------------------------------->
     const [isInEditingMode, toggleEditingMode] = useState(false)
-    const [input, updateInput] = useState(0)
     const { updateExperience } = useActions()
 
     // LOGIC ---------------------------------------------------------------->
-    const handleToggleEditingMode = (isEditing: boolean)
-      : React.MouseEventHandler<HTMLElement> =>
-      () => toggleEditingMode(isEditing)
+    const handleExperienceUpdate = useCallback(
+      (input: number) => updateExperience({ expId: id, expInput: input }), []
+    )
 
-    const handleInputUpdate
-      : React.ChangeEventHandler<HTMLInputElement> =
-      (e) => updateInput(+e.target.value)
-
-    const handleSubmit = (expId: number, expInput: number)
-      : React.KeyboardEventHandler<HTMLInputElement> =>
-      (e) => {
-        if (e.keyCode === 13) {
-          updateExperience({ expId, expInput })
-          updateInput(0)
-          toggleEditingMode(false)
-        }
-      }
-
+    const handleToggleEditing = useCallback(
+      (input: boolean) => toggleEditingMode(input), []
+    )
     // JSX ------------------------------------------------------------------>
     return (
       <ListItem>
@@ -49,16 +39,14 @@ const ExpItem: React.FC<ExperienceProps> =
 
         {
           isInEditingMode
-            ? <EpxerienceInput
-              error={Number.isNaN(input)}
-              autoFocus
-              onKeyDown={handleSubmit(id, input)}
-              onChange={handleInputUpdate}
-              value={input}
-              placeholder='experience'
+            ? <InputField
+              validationSchema={experienceSchema}
+              placeholder={years}
+              handleToggleEditing={handleToggleEditing}
+              action={handleExperienceUpdate}
             />
             : <YearsOfExperience
-              onClick={handleToggleEditingMode(true)}
+              onClick={() => handleToggleEditing(true)}
             >
               {years} years
             </YearsOfExperience>
@@ -67,4 +55,4 @@ const ExpItem: React.FC<ExperienceProps> =
     )
   }
 
-export default ExpItem
+export default React.memo(ExpItem)

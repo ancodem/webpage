@@ -1,9 +1,11 @@
 import React from 'react'
 import { useFormik, FormikProps } from 'formik'
 
-import { NameSchemaType, TechnologyNameSchemaType } from 'validationSchemas/validation.types'
 import {
-  ErrorMessage, CorrectIcon, WrongIcon, InputContainer, InputArea
+  NameSchemaType, TechnologyNameSchemaType, ExperienceSchemaType
+} from 'validationSchemas/validation.types'
+import {
+  CorrectIcon, WrongIcon, InputContainer, InputArea
 } from './styles'
 
 interface FormValues {
@@ -11,10 +13,11 @@ interface FormValues {
 }
 
 interface InputProps {
-  validationSchema: NameSchemaType | TechnologyNameSchemaType
+  validationSchema:
+  NameSchemaType | TechnologyNameSchemaType | ExperienceSchemaType
   action: (arg: any) => void
   handleToggleEditing: (arg: boolean) => void
-  placeholder: string
+  placeholder: string | number
   sx?: {
     [attr: string]: string
   }
@@ -55,10 +58,6 @@ const InputField: React.FC<InputProps> = (
       />
       {errors.input && touched.input
         ? <WrongIcon /> : <CorrectIcon />}
-      {errors.input && touched.input
-        ? <ErrorMessage>{errors.input}</ErrorMessage>
-        : null
-      }
     </InputContainer>
 
   )
