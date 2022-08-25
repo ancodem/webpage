@@ -49,21 +49,6 @@ const theme = createTheme({
       },
     },
 
-    MuiListItem: {
-      styleOverrides: {
-        root: {
-          flexWrap: 'wrap',
-          fontWeight: '400',
-          fontSize: '16px',
-          lineHeight: '20px',
-          '&::before': {
-            content: '"–"',
-            marginRight: '8px',
-          }
-        },
-      },
-    },
-
     MuiChip: {
       styleOverrides: {
         root: {

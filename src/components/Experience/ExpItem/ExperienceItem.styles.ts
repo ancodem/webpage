@@ -18,4 +18,9 @@ export const Item = styled(ListItem)(() => ({
   padding: '0px',
   lineHeight: '20px',
   fontSize: '16px',
+  '&::before': {
+    content: '"–"',
+    marginRight: '8px',
+  }
+
 }))
