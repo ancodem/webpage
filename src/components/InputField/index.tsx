@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFormik, FormikProps } from 'formik'
 
-import { NameSchemaType } from 'validationSchemas/validation.types'
+import { NameSchemaType, TechnologyNameSchemaType } from 'validationSchemas/validation.types'
 import {
   ErrorMessage, CorrectIcon, WrongIcon, InputContainer, InputArea
 } from './styles'
@@ -11,10 +11,10 @@ interface FormValues {
 }
 
 interface InputProps {
-  validationSchema: NameSchemaType
+  validationSchema: NameSchemaType | TechnologyNameSchemaType
   action: (arg: any) => void
   handleToggleEditing: (arg: boolean) => void
-  placeholder: string | number
+  placeholder: string
   sx?: {
     [attr: string]: string
   }

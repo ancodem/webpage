@@ -1,8 +1,7 @@
 import nameSchema from './nameValidationSchema'
-import experienceSchema from './experienceValidation'
+import technologyNameSchema from './technologyNameValidation'
 
-// eslint-disable-next-line
 export {
   nameSchema,
-  experienceSchema,
+  technologyNameSchema,
 }
