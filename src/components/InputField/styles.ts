@@ -6,7 +6,7 @@ export const CorrectIcon = styled(CheckCircleIcon)(() => ({
   boxSizing: 'border-box',
   color: '#33C127',
   position: 'absolute',
-  top: '16px',
+  top: '5px',
   right: '4px',
   height: '16px',
   widht: '16px',
@@ -15,7 +15,7 @@ export const CorrectIcon = styled(CheckCircleIcon)(() => ({
 export const WrongIcon = styled(Cancel)(({ theme }) => ({
   color: theme.palette.hover.main,
   position: 'absolute',
-  top: '16px',
+  top: '5px',
   right: '4px',
   height: '16px',
   widht: '16px',
@@ -32,10 +32,3 @@ export const InputArea = styled(Input)(() => ({
   backgroundColor: '#e2e3e3'
 }))
 
-export const ErrorMessage = styled(Typography)(({ theme }) => ({
-  color: theme.palette.hover.main,
-  position: 'absolute',
-  top: '16px',
-  right: '-100px',
-
-})) as typeof Typography
