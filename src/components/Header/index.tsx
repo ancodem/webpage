@@ -1,6 +1,5 @@
 import React from 'react'
 import { Typography } from '@mui/material'
-import PrintIcon from '@mui/icons-material/Print'
 
 import { useAppSelector } from 'hooks'
 import NameField from 'components/NameField'
@@ -29,7 +28,6 @@ const Header: React.FC = () => {
         <Skills />
       </UserInfo>
 
-      <PrintInfo><PrintIcon /> Print this page</PrintInfo>
     </HeaderContainer >
   )
 }
