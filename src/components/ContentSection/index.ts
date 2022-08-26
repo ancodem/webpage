@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { ContentSection } from './ContentSection'
 
-export default ContentSection
+export default memo(ContentSection)

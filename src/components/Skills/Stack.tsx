@@ -1,13 +1,14 @@
-import React, { useCallback, useState } from 'react'
+import React, { lazy, Suspense, useCallback, useState } from 'react'
 import AddIcon from '@mui/icons-material/Add'
-import SkillAddButton from '@mui/material/Chip'
 
-import { InputField } from 'components'
 import { technologyNameSchema } from 'validationSchemas'
 import { useActions, useAppSelector } from 'hooks'
 import { StackType } from 'store/reducers/reducer.types'
 import { StackContainer } from './Stack.styles'
 import Skill from './Skill'
+
+const InputField = lazy(() => import('components/InputField'))
+const SkillAddButton = lazy(() => import('@mui/material/Chip'))
 
 export const Stack: React.FC = () => {
   const { userStack } = useAppSelector(state => state.main)
@@ -27,18 +28,26 @@ export const Stack: React.FC = () => {
   return (
     <StackContainer>
       {userStack.map((s: StackType) => /* STACK ==========================> */
-        <Skill key={s.id} id={s.id} label={s.technologyName} />
+        <Suspense fallback={<li>skill</li>}>
+          <Skill key={s.id} id={s.id} label={s.technologyName} />
+        </Suspense>
       )}
 
       {isInEditingMode
-        ? <InputField
-          validationSchema={technologyNameSchema}
-          action={handleAddTechnology}
-          handleToggleEditing={handleToggleEditing}
-          placeholder=''
-        />
-        : <SkillAddButton label={<AddIcon />} onClick={() => toggleEditingMode(true)} />}
-
+        ? <Suspense fallback={<li>loading...</li>}>
+          <InputField
+            validationSchema={technologyNameSchema}
+            action={handleAddTechnology}
+            handleToggleEditing={handleToggleEditing}
+            placeholder=''
+          />
+        </Suspense>
+        : <Suspense fallback={<li>loading...</li>}>
+          <SkillAddButton label={<AddIcon />}
+            onClick={() => toggleEditingMode(true)}
+          />
+        </Suspense>
+      }
     </StackContainer>
   )
 }

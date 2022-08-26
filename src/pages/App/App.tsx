@@ -1,27 +1,18 @@
-import React, { useRef } from 'react'
+import React, { useRef, lazy, Suspense } from 'react'
 import { Container, Box, Typography, Grid } from '@mui/material'
-import { useReactToPrint } from 'react-to-print'
 import PrintIcon from '@mui/icons-material/Print'
 
-import {
-  Header,
-  Portfolio,
-  Experience,
-  BlockQuote,
-  GoogleMap,
-  ContentSection
-} from 'components'
+import { BlockQuote, Experience, Header, Portfolio, ContentSection } from 'components'
+import { usePrint } from 'hooks'
 import { PrintInfo } from './App.styles'
 
-export const App: React.FC = () => {
-  const printRef = useRef(null)
+const GoogleMap = lazy(() => import('components/GoogleMap'))
 
-  const handlePrint = useReactToPrint({
-    content: () => printRef.current
-  })
+export const App: React.FC = () => {
+  const { printRef, handlePrint } = usePrint()
 
   return (
-    <Box >
+    <Box ref={printRef} >
       <PrintInfo onClick={handlePrint}>
         <PrintIcon />
         Print this page
@@ -83,9 +74,11 @@ export const App: React.FC = () => {
             </ContentSection>
           </Grid>
 
-          <Grid item xs={6}>
-            <GoogleMap />
-          </Grid>
+          <Suspense fallback={<div>loading...</div>}>
+            <Grid item xs={6}>
+              <GoogleMap />
+            </Grid>
+          </Suspense>
 
         </Grid >
       </Container>

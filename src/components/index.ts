@@ -6,8 +6,12 @@ import BlockQuote from './BlockQuote'
 import GoogleMap from './GoogleMap'
 import ContentSection from './ContentSection'
 import InputField from './InputField'
+import Stack from './Skills'
+import NameField from './NameField'
 
 export {
+  NameField,
+  Stack,
   InputField,
   ContentSection,
   GoogleMap,

@@ -4,7 +4,6 @@ import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api'
 import { MapSkeleton } from './styles'
 
 const GMap: React.FC = () => {
-  // STATE ------------------------------------------------------------------>
   const googleMapsApiKey
     : string = process.env.REACT_APP_GOOGLE_MAPS_API_KEY!
   const center = { lat: 45.523064, lng: -122.676483 }
@@ -12,7 +11,6 @@ const GMap: React.FC = () => {
     googleMapsApiKey
   })
 
-  // JSX -------------------------------------------------------------------->
   if (!isLoaded) return <MapSkeleton variant="rounded" />
 
   return (

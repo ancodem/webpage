@@ -1,14 +1,12 @@
 import React from 'react'
 import { Typography } from '@mui/material'
 
-import NameField from 'components/NameField'
-import Location from 'components/Location'
-import Skills from 'components/Skills'
 import { useAppSelector } from 'hooks'
+import { Stack, NameField, Location } from 'components'
 import {
   HeaderContainer,
   UserInfo,
-  UserAvatar
+  UserAvatar,
 } from './Header.styles'
 
 export const Header: React.FC = () => {
@@ -27,7 +25,7 @@ export const Header: React.FC = () => {
         <NameField />
         <Location />
         <Typography>language</Typography>
-        <Skills />
+        <Stack />
       </UserInfo>
 
     </HeaderContainer >

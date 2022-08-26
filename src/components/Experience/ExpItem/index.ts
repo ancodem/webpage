@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { ExpItem } from './ExperienceItem'
 
-export default ExpItem
+export default memo(ExpItem)

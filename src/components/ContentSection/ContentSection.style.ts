@@ -1,7 +1,6 @@
 import { styled, Box } from '@mui/material'
 
-// eslint-disable-next-line
-export const Section = styled('section')(({ theme }) => ({
+export const Section = styled('section')(() => ({
   maxWidth: '550px',
   margin: '0 20px',
 })) as typeof Box

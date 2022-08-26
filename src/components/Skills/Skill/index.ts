@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Skill } from './Skill'
 
-export default Skill
+export default memo(Skill)
