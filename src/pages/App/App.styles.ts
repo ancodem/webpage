@@ -1,23 +1,22 @@
 import { styled, Link, Box } from '@mui/material'
-import Cn from '@mui/material/Container'
 
-export const Container = styled(Box)(() => ({
-  display: 'flex',
-  flexDirection: 'column',
-  margin: '0',
-  height: '100vh',
+export const AppContainer = styled(Box)(() => ({
 }))
 
-export const MainContent = styled(Cn)(() => ({
+export const Main = styled(Box)(() => ({
   display: 'flex',
-  flexDirection: 'column',
-  alignSelf: 'center',
+  margin: '56px 156px',
+
+}))
+
+export const InfoPiece = styled(Box)(() => ({
+  display: 'inline-flex',
+  flexWrap: 'wrap',
   justifyContent: 'center',
-  gap: '36px',
-  padding: '56px 156px',
-  margin: '0',
-  flex: '1 1',
-})) as typeof Cn
+  flexBasis: '50%',
+  flexGrow: '1',
+
+}))
 
 export const PrintInfo = styled(Link)(({ theme }) => ({
   display: 'flex',
@@ -29,6 +28,9 @@ export const PrintInfo = styled(Link)(({ theme }) => ({
   right: '156px',
   transitionDuration: '500ms',
 
+  [theme.breakpoints.down('md')]: {
+    right: '100px',
+  },
   '&:hover': {
     cursor: 'pointer',
     color: theme.palette.hover.main,
