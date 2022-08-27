@@ -1,4 +1,4 @@
-import React, { useRef, lazy, Suspense } from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Container, Box, Typography, Grid } from '@mui/material'
 import PrintIcon from '@mui/icons-material/Print'
 
