@@ -35,6 +35,7 @@ const theme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
+          fontFamily: 'Roboto',
           color: '#3483CC',
           transitionDuration: '1s',
           textDecoration: 'none',
@@ -52,6 +53,7 @@ const theme = createTheme({
     MuiChip: {
       styleOverrides: {
         root: {
+          fontFamily: 'Roboto',
           fontWeight: '400',
           fontSize: '14px',
           color: 'white',

@@ -1,14 +1,12 @@
 import React, { lazy, Suspense, useCallback, useState } from 'react'
-import AddIcon from '@mui/icons-material/Add'
 
 import { technologyNameSchema } from 'validationSchemas'
 import { useActions, useAppSelector } from 'hooks'
 import { StackType } from 'store/reducers/reducer.types'
-import { StackContainer } from './Stack.styles'
+import { AddSkillButton, StackContainer } from './Stack.styles'
 import Skill from './Skill'
 
 const InputField = lazy(() => import('components/InputField'))
-const SkillAddButton = lazy(() => import('@mui/material/Chip'))
 
 export const Stack: React.FC = () => {
   const { userStack } = useAppSelector(state => state.main)
@@ -43,7 +41,7 @@ export const Stack: React.FC = () => {
           />
         </Suspense>
         : <Suspense fallback={<li>loading...</li>}>
-          <SkillAddButton label={<AddIcon />}
+          <AddSkillButton
             onClick={() => toggleEditingMode(true)}
           />
         </Suspense>

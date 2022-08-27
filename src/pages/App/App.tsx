@@ -49,11 +49,17 @@ export const App: React.FC = () => {
           </InfoPiece>
 
           <InfoPiece>
-            <ContentSection title='Portfolio'>
-              <Portfolio />
+            <ContentSection title='Sample code'>
+              <img alt='sample code' src='assets/sampleCode.png' />
             </ContentSection>
 
-            <Box>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'justify',
+
+              }}>
 
               <ContentSection title='Availability'>
                 <Box>
