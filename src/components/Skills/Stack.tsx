@@ -38,6 +38,7 @@ export const Stack: React.FC = () => {
             action={handleAddTechnology}
             handleToggleEditing={handleToggleEditing}
             placeholder=''
+            sx={{ height: '24px' }}
           />
         </Suspense>
         : <Suspense fallback={<li>loading...</li>}>

@@ -23,7 +23,6 @@ export const WrongIcon = styled(Cancel)(({ theme }) => ({
 
 export const InputContainer = styled(Box)(() => ({
   position: 'relative',
-  backgroundColor: 'red',
   maxWidth: '360px',
 
 })) as typeof Box
@@ -31,7 +30,7 @@ export const InputContainer = styled(Box)(() => ({
 export const InputArea = styled(Input)(() => ({
   fontWeight: '400',
   fontSize: '14px',
-  height: '24px',
+  height: '16px',
   backgroundColor: '#e2e3e3'
 }))
 
