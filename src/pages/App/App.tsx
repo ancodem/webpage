@@ -2,9 +2,10 @@ import React, { lazy, Suspense } from 'react'
 import { Box, Typography } from '@mui/material'
 import PrintIcon from '@mui/icons-material/Print'
 
+import sampleCode from 'assets/sampleCode.png'
 import { BlockQuote, Experience, Header, Portfolio, ContentSection } from 'components'
 import { usePrint } from 'hooks'
-import { Main, InfoPiece, AppContainer, PrintInfo } from './App.styles'
+import { Main, AppContainer, PrintInfo } from './App.styles'
 
 const GoogleMap = lazy(() => import('components/GoogleMap'))
 
@@ -32,7 +33,7 @@ export const App: React.FC = () => {
 
 
           <ContentSection title='Sample code'>
-            <img alt='sample code' src='assets/sampleCode.png' />
+            <img alt='sample code' src={sampleCode} />
           </ContentSection>
 
           <Box

@@ -4,7 +4,6 @@ export const QuoteContainer = styled('blockquote')(({ theme }) => ({
   position: 'relative',
   maxWidth: '232px',
   maxHeight: '100px',
-  textAlign: 'center',
   margin: '40px auto',
 
   '&::before': {

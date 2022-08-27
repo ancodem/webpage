@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useCallback, useState } from 'react'
+import React, { lazy, useCallback, useState } from 'react'
 
 import { technologyNameSchema } from 'validationSchemas'
 import { useActions, useAppSelector } from 'hooks'
@@ -26,26 +26,21 @@ export const Stack: React.FC = () => {
   return (
     <StackContainer>
       {userStack.map((s: StackType) => /* STACK ==========================> */
-        <Suspense fallback={<li>skill</li>}>
-          <Skill key={s.id} id={s.id} label={s.technologyName} />
-        </Suspense>
+        <Skill key={s.id} id={s.id} label={s.technologyName} />
       )}
 
       {isInEditingMode
-        ? <Suspense fallback={<li>loading...</li>}>
-          <InputField
-            validationSchema={technologyNameSchema}
-            action={handleAddTechnology}
-            handleToggleEditing={handleToggleEditing}
-            placeholder=''
-            sx={{ height: '24px' }}
-          />
-        </Suspense>
-        : <Suspense fallback={<li>loading...</li>}>
-          <AddSkillButton
-            onClick={() => toggleEditingMode(true)}
-          />
-        </Suspense>
+        ? <InputField
+          validationSchema={technologyNameSchema}
+          action={handleAddTechnology}
+          handleToggleEditing={handleToggleEditing}
+          placeholder=''
+          sx={{ height: '24px' }}
+        />
+        : <AddSkillButton
+          sx={{ cursor: 'pointer' }}
+          onClick={() => toggleEditingMode(true)}
+        />
       }
     </StackContainer>
   )

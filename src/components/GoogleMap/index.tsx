@@ -18,7 +18,7 @@ const GMap: React.FC = () => {
       center={center}
       zoom={10}
       mapContainerStyle={{
-        width: '552px',
+        minWidth: '530px',
         height: '200px',
         borderRadius: '6px',
       }}

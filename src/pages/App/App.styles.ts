@@ -5,22 +5,14 @@ export const AppContainer = styled(Box)(() => ({
 
 export const Main = styled(Box)(() => ({
   boxSizing: 'border-box',
-  padding: '56px 156px',
+  margin: '56px auto',
+  maxWidth: '1104px',
   display: 'grid',
-  gridTemplateColumns: '288px 288px 288px 288px ',
-  gap: '24px',
+  gridTemplateColumns: '235px 225px 225px 250px ',
   gridTemplateRows: '1fr 1fr',
-  rowGap: '80px',
-
-}))
-
-export const InfoPiece = styled(Box)(() => ({
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  flexBasis: '50%',
+  justifyContent: 'space-between',
   gap: '24px',
-  border: 'solid 1px red'
+  rowGap: '80px',
 
 }))
 
