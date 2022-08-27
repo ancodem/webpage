@@ -22,63 +22,57 @@ export const App: React.FC = () => {
         <Header />
 
         <Main>
-          <InfoPiece>
-            <ContentSection title='Portfolio'>
-              <Portfolio />
+          <ContentSection title='Portfolio'>
+            <Portfolio />
+          </ContentSection>
+
+          <ContentSection title='Experience'>
+            <Experience />
+          </ContentSection>
+
+
+          <ContentSection title='Sample code'>
+            <img alt='sample code' src='assets/sampleCode.png' />
+          </ContentSection>
+
+          <Box
+            sx={{
+              display: 'grid',
+              gap: '8px'
+            }}>
+
+            <ContentSection title='Availability'>
+              <Box>
+                full time
+              </Box>
             </ContentSection>
 
-            <ContentSection title='Experience'>
-              <Experience />
+            <ContentSection title='Preferred environment'>
+              <Typography>
+                GitHub, MacOS, OSX
+              </Typography>
             </ContentSection>
-
-            <ContentSection
-              boxSX={{ textAlign: 'center' }}
-              title='The Most Amaizing...'>
-              <BlockQuote>
-                The only true wisdom is in knowing you know nothing...
-              </BlockQuote>
-            </ContentSection>
-
-            <ContentSection
-              boxSX={{ textAlign: 'center' }}
-              title='In clients I look for...'>
-              <BlockQuote>
-                There is only one good, knowledge, and one evil, ignorance.
-              </BlockQuote>
-            </ContentSection>
-          </InfoPiece>
-
-          <InfoPiece>
-            <ContentSection title='Sample code'>
-              <img alt='sample code' src='assets/sampleCode.png' />
-            </ContentSection>
-
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'justify',
-
-              }}>
-
-              <ContentSection title='Availability'>
-                <Box>
-                  full time
-                </Box>
-              </ContentSection>
-
-              <ContentSection title='Preferred environment'>
-                <Typography>
-                  GitHub, MacOS, OSX
-                </Typography>
-              </ContentSection>
-            </Box>
+          </Box>
 
 
-            <Suspense fallback={<div>loading...</div>}>
-              <GoogleMap />
-            </Suspense>
-          </InfoPiece>
+          <ContentSection
+            boxSX={{ textAlign: 'center' }}
+            title='The Most Amaizing...'>
+            <BlockQuote>
+              The only true wisdom is in knowing you know nothing...
+            </BlockQuote>
+          </ContentSection>
+
+          <ContentSection
+            boxSX={{ textAlign: 'center' }}
+            title='In clients I look for...'>
+            <BlockQuote>
+              There is only one good, knowledge, and one evil, ignorance.
+            </BlockQuote>
+          </ContentSection>
+          <Suspense fallback={<div>loading...</div>}>
+            <GoogleMap />
+          </Suspense>
 
         </Main>
       </AppContainer >

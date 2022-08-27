@@ -4,13 +4,19 @@ export const AppContainer = styled(Box)(() => ({
 }))
 
 export const Main = styled(Box)(() => ({
+  boxSizing: 'border-box',
   padding: '56px 156px',
-  display: 'flex',
+  display: 'grid',
+  gridTemplateColumns: '288px 288px 288px 288px ',
+  gap: '24px',
+  gridTemplateRows: '1fr 1fr',
+  rowGap: '80px',
 
 }))
 
 export const InfoPiece = styled(Box)(() => ({
   display: 'flex',
+  flexDirection: 'row',
   flexWrap: 'wrap',
   flexBasis: '50%',
   gap: '24px',
