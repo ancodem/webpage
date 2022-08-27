@@ -1,4 +1,4 @@
-import { styled, Box, Avatar, Link } from '@mui/material'
+import { styled, Box, Avatar } from '@mui/material'
 
 export const HeaderContainer = styled(Box)(({ theme }) => ({
   width: '100vw',
@@ -31,19 +31,3 @@ export const UserAvatar = styled(Avatar)(() => ({
   border: 'solid 4px white',
 })) as typeof Avatar
 
-export const PrintInfo = styled(Link)(({ theme }) => ({
-  fontWeight: '400',
-  fontSize: '16px',
-  position: 'absolute',
-  top: '40px',
-  right: '156px',
-  transitionDuration: '500ms',
-
-  [theme.breakpoints.down('md')]: {
-    right: '100px',
-  },
-  '&:hover': {
-    cursor: 'pointer',
-    color: theme.palette.hover.main,
-  },
-})) as typeof Link
