@@ -1,30 +1,62 @@
 import { styled, Link, Box } from '@mui/material'
 
 export const AppContainer = styled(Box)(() => ({
+  // epmty 
+})) as typeof Box
+
+export const Image = styled('img')(({ theme }) => ({
+  width: '264px',
+  [theme.breakpoints.down('lg')]: {
+    width: '200px',
+  },
+  [theme.breakpoints.down('md')]: {
+    width: '300px',
+    justifSelf: 'center'
+  }
 }))
 
 export const Main = styled(Box)(({ theme }) => ({
   boxSizing: 'border-box',
   margin: '56px auto',
   maxWidth: '1104px',
-  display: 'grid',
-  gridTemplateColumns: '235px 225px 225px 250px ',
-  gridTemplateRows: '1fr 1fr',
-  justifyContent: 'space-between',
-  gap: '24px',
-  rowGap: '80px',
+
+})) as typeof Box
+
+export const ContentContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  maxWidth: '1104px',
+  minHeight: '200px',
+  margin: '40px auto',
+  gap: '50px',
   [theme.breakpoints.down('lg')]: {
-    gridTemplateColumns: '200px 200px 200px 200px ',
-    rowGap: '50px',
-    gap: '15px',
-    maxWidth: '1000px',
+    gap: '40px',
+    maxWidth: '900px',
   },
   [theme.breakpoints.down('md')]: {
-    gridTemplateColumns: '225px 250px ',
+    gap: '35px',
+    maxWidth: '600px',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
+  [theme.breakpoints.down('sm')]: {
+    gap: '35px',
+    maxWidth: '400px',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 
-  }
 
+})) as typeof Box
 
+export const AddInfo = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '20px',
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 })) as typeof Box
 
 export const PrintInfo = styled(Link)(({ theme }) => ({

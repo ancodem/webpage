@@ -2,8 +2,9 @@ import { Typography, Box, styled } from '@mui/material'
 
 export const QuoteContainer = styled('blockquote')(({ theme }) => ({
   position: 'relative',
-  maxWidth: '240px',
+  maxWidth: '232px',
   maxHeight: '100px',
+  margin: '40px auto',
 
   '&::before': {
     position: 'absolute',
@@ -27,6 +28,7 @@ export const QuoteContainer = styled('blockquote')(({ theme }) => ({
     top: '20px',
     content: '"❞"',
     fontSize: '65px',
+    width: '40px',
     color: theme.palette.neutral.main,
     [theme.breakpoints.down('lg')]: {
       fontSize: '50px',
@@ -39,6 +41,7 @@ export const QuoteContainer = styled('blockquote')(({ theme }) => ({
 
 export const Quote = styled(Typography)(({ theme }) => ({
   fontSize: '16px',
+  lineHeight: '24px',
   textAlign: 'center',
   flexWrap: 'wrap',
 
