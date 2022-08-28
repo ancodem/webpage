@@ -1,29 +1,12 @@
 import React from 'react'
 import { useFormik, FormikProps } from 'formik'
 
+import { InputProps, FormValues } from './InputField.types'
 import {
-  NameSchemaType, TechnologyNameSchemaType, ExperienceSchemaType
-} from 'validationSchemas/validation.types'
-import {
-  CorrectIcon, WrongIcon, InputContainer, InputArea
-} from './styles'
+  CorrectIcon, WrongIcon, InputContainer, InputArea, WarningMessage
+} from './InputField.styles'
 
-interface FormValues {
-  input: string
-}
-
-interface InputProps {
-  validationSchema:
-  NameSchemaType | TechnologyNameSchemaType | ExperienceSchemaType
-  action: (arg: any) => void
-  handleToggleEditing: (arg: boolean) => void
-  placeholder: string | number
-  sx?: {
-    [attr: string]: string
-  }
-}
-
-const InputField: React.FC<InputProps> = (
+export const InputField: React.FC<InputProps> = (
   { validationSchema, handleToggleEditing, action, placeholder, sx }
 ) => {
 
@@ -58,9 +41,12 @@ const InputField: React.FC<InputProps> = (
       />
       {errors.input && touched.input
         ? <WrongIcon /> : <CorrectIcon />}
+      <WarningMessage>
+        {errors.input && touched.input
+          ? errors.input : null}
+      </WarningMessage>
     </InputContainer>
 
   )
 
 }
-export default InputField

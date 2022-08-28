@@ -35,6 +35,7 @@ const theme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
+          fontFamily: 'Roboto',
           color: '#3483CC',
           transitionDuration: '1s',
           textDecoration: 'none',
@@ -49,25 +50,10 @@ const theme = createTheme({
       },
     },
 
-    MuiListItem: {
-      styleOverrides: {
-        root: {
-          flexWrap: 'wrap',
-          fontWeight: '400',
-          fontSize: '16px',
-          lineHeight: '20px',
-          '&::before': {
-            content: '"–"',
-            margin: ' 1px 8px 0 0',
-            alignSelf: 'flex-start',
-          }
-        },
-      },
-    },
-
     MuiChip: {
       styleOverrides: {
         root: {
+          fontFamily: 'Roboto',
           fontWeight: '400',
           fontSize: '14px',
           color: 'white',

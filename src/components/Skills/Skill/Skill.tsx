@@ -1,24 +1,19 @@
 import React, { useState } from 'react'
-import { Chip } from '@mui/material'
+import SkillBadge from '@mui/material/Chip'
 
 import { useActions } from 'hooks'
-import DeleteIcon from './icons'
+import { SkillContainer } from './Skill.styles'
+import DeleteIcon from './Skill.icons'
+import { SkillProps } from './Skill.types'
 
-interface SkillProps {
-  label: string
-  id: number
-}
 
-const Skill: React.FC<SkillProps> = ({ label, id }) => {
-  // STATE ------------------------------------------------------------------>
+export const Skill: React.FC<SkillProps> = ({ label, id }) => {
   const { deleteTechnology } = useActions()
   const [isVisible, toggleVisible] = useState(false)
 
-  // LOGIC ------------------------------------------------------------------>
   const handleDelition
     : React.MouseEventHandler<SVGSVGElement> =
     () => deleteTechnology(id)
-
 
   const handleHover = (isHovering: boolean)
     : React.MouseEventHandler<HTMLElement> =>
@@ -28,11 +23,10 @@ const Skill: React.FC<SkillProps> = ({ label, id }) => {
     : React.MouseEventHandler<SVGSVGElement> =>
     () => toggleVisible(isSeen)
 
-  // JSX -------------------------------------------------------------------->
   return (
-    <article style={{ position: 'relative' }}>
+    <SkillContainer >
 
-      <Chip
+      <SkillBadge
         onMouseEnter={handleHover(true)}
         onMouseLeave={handleHover(false)}
         label={label}
@@ -46,8 +40,6 @@ const Skill: React.FC<SkillProps> = ({ label, id }) => {
           />
           : null
       }
-    </article>
+    </SkillContainer>
   )
 }
-
-export default Skill

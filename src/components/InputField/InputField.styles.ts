@@ -23,12 +23,22 @@ export const WrongIcon = styled(Cancel)(({ theme }) => ({
 
 export const InputContainer = styled(Box)(() => ({
   position: 'relative',
+  maxWidth: '360px',
+
 })) as typeof Box
 
 export const InputArea = styled(Input)(() => ({
   fontWeight: '400',
   fontSize: '14px',
-  height: '24px',
+  height: '16px',
   backgroundColor: '#e2e3e3'
+}))
+
+export const WarningMessage = styled(Typography)(({ theme }) => ({
+  color: theme.palette.hover.main,
+  position: 'absolute',
+  right: '-100px',
+  top: '1px',
+  zIndex: '2',
 }))
 

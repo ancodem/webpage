@@ -3,23 +3,19 @@ import { List } from '@mui/material'
 
 import { useAppSelector } from 'hooks'
 import { StackType } from 'store/reducers/reducer.types'
-import ExpItem from './ExpItem'
+import ExperienceItem from './ExpItem'
 
-const Experience: React.FC = () => {
-  // STATE ------------------------------------------------------------------>
+export const Experience: React.FC = () => {
   const { userStack } = useAppSelector(state => state.main)
 
-  // LOGIC ------------------------------------------------------------------>
   const sortedStack = useMemo(() => [...userStack].sort(
     (s1, s2) => s2.yearsOfExperience - s1.yearsOfExperience
   ), [userStack])
 
-
-  // JSX -------------------------------------------------------------------->
   return (
-    <List>
+    <List sx={{ padding: '0px' }}>
       {sortedStack.map((s: StackType) =>
-        <ExpItem
+        <ExperienceItem
           key={s.id}
           id={s.id}
           name={s.technologyName}
@@ -30,5 +26,3 @@ const Experience: React.FC = () => {
     </List>
   )
 }
-
-export default Experience

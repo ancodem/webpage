@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, List, ListItem } from '@mui/material'
+import { PortfolioList, PortfolioItem, PortfolioLink } from './Portfolio.styles'
 
 const sampleWorks: Array<{ id: number, title: string }> = [
   { id: 0, title: 'Bootstrap 4 Material Design (Sample Link)' },
@@ -8,14 +8,13 @@ const sampleWorks: Array<{ id: number, title: string }> = [
   { id: 3, title: 'Fast and reliable Bootstrap widgets in Angular ' },
 ]
 
-const Portfolio: React.FC = () => (
-  <List>
+export const Portfolio: React.FC = () => (
+  <PortfolioList>
     {sampleWorks.map(work =>
-
-      <ListItem key={work.id}>
-        <Link href={work.title}>{work.title}</Link>
-      </ListItem>)}
-
-  </List>
+      <PortfolioItem key={work.id}>
+        <PortfolioLink href={work.title}>
+          {work.title}
+        </PortfolioLink>
+      </PortfolioItem>)}
+  </PortfolioList>
 )
-export default Portfolio

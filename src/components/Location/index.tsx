@@ -18,4 +18,4 @@ const Location: React.FC = () => {
   )
 }
 
-export default Location
+export default React.memo(Location)
