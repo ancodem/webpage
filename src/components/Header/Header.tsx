@@ -8,6 +8,7 @@ import {
   HeaderContainer,
   UserInfo,
   UserAvatar,
+  HeaderContent,
 } from './Header.styles'
 
 export const Header: React.FC = () => {
@@ -15,23 +16,25 @@ export const Header: React.FC = () => {
     useAppSelector(state => state.main)
 
   return (
-    <HeaderContainer>
+    <HeaderContent>
+      <HeaderContainer component="header">
 
-      <UserAvatar
-        src={userAvatar}
-        alt="avatar"
-      />
+        <UserAvatar
+          src={userAvatar}
+          alt="avatar"
+        />
 
-      <UserInfo>
-        <NameField />
-        <Location />
-        <Typography sx={{ display: 'flex', gap: '8px' }}>
-          <img src={flag} alt='flag' width='24px' height='24px' />
-          English
-        </Typography>
-        <Stack />
-      </UserInfo>
+        <UserInfo>
+          <NameField />
+          <Location />
+          <Typography sx={{ display: 'flex', gap: '8px' }}>
+            <img src={flag} alt='flag' width='24px' height='24px' />
+            English
+          </Typography>
+          <Stack />
+        </UserInfo>
 
-    </HeaderContainer >
+      </HeaderContainer >
+    </HeaderContent>
   )
 }

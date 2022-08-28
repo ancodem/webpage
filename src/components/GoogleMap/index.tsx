@@ -1,7 +1,7 @@
 import React from 'react'
 import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api'
 
-import { MapSkeleton } from './styles'
+import { MapContainer, MapSkeleton } from './GoogleMap.styles'
 
 const GMap: React.FC = () => {
   const googleMapsApiKey
@@ -17,11 +17,6 @@ const GMap: React.FC = () => {
     <GoogleMap
       center={center}
       zoom={10}
-      mapContainerStyle={{
-        minWidth: '530px',
-        height: '200px',
-        borderRadius: '6px',
-      }}
     >
       <Marker position={center} />
     </GoogleMap>

@@ -3,7 +3,7 @@ import { styled, Link, Box } from '@mui/material'
 export const AppContainer = styled(Box)(() => ({
 }))
 
-export const Main = styled(Box)(() => ({
+export const Main = styled(Box)(({ theme }) => ({
   boxSizing: 'border-box',
   margin: '56px auto',
   maxWidth: '1104px',
@@ -13,8 +13,19 @@ export const Main = styled(Box)(() => ({
   justifyContent: 'space-between',
   gap: '24px',
   rowGap: '80px',
+  [theme.breakpoints.down('lg')]: {
+    gridTemplateColumns: '200px 200px 200px 200px ',
+    rowGap: '50px',
+    gap: '15px',
+    maxWidth: '1000px',
+  },
+  [theme.breakpoints.down('md')]: {
+    gridTemplateColumns: '225px 250px ',
 
-}))
+  }
+
+
+})) as typeof Box
 
 export const PrintInfo = styled(Link)(({ theme }) => ({
   display: 'flex',

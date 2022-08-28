@@ -17,7 +17,7 @@ export const HeaderContainer = styled(Box)(({ theme }) => ({
   },
 })) as typeof Box
 
-export const UserInfo = styled(Box)(() => ({
+export const UserInfo = styled(Box)(({ theme }) => ({
   minWidth: '360px',
   margin: '24px',
   display: 'flex',
@@ -30,4 +30,9 @@ export const UserAvatar = styled(Avatar)(() => ({
   height: '168px',
   border: 'solid 4px white',
 })) as typeof Avatar
+
+export const HeaderContent = styled(Box)(() => ({
+  maxWidth: '1104px',
+})) as typeof Box
+
 
