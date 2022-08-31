@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 
-const nameSchema = yup.object().shape({
+const noSpecialSymbolsSchema = yup.object().shape({
   input: yup
     .string().trim()
     .required('Field is empty')
@@ -8,5 +8,5 @@ const nameSchema = yup.object().shape({
     .matches(/^[aA-zZ\s]+$/, 'Not allowed')
 })
 
-export type NameSchemaType = typeof nameSchema
-export default nameSchema
+export type NoSpecialSymbolsSchemaType = typeof noSpecialSymbolsSchema
+export default noSpecialSymbolsSchema

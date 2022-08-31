@@ -5,7 +5,7 @@ export const yandexMapApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://search-maps.yandex.ru/v1/' }),
   endpoints: (builder) => ({
     getLocation: builder.query<any, string>({
-      query: (location) => `?apikey=79a71370-eb19-42ba-8cec-768858a479d8&text=${location}&lang=en_US`,
+      query: (location) => `?apikey=ваш API-ключ&text=${location}&lang=en_US`,
     }),
   }),
 })

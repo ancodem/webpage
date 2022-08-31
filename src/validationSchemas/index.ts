@@ -1,9 +1,9 @@
-import nameSchema from './nameValidationSchema'
+import noSpecialSymbolsSchema from './noSpecialSymbolsValidationSchema'
 import technologyNameSchema from './technologyNameValidation'
 import experienceSchema from './experienceValidationSchema'
 
 export {
-  nameSchema,
+  noSpecialSymbolsSchema,
   technologyNameSchema,
   experienceSchema,
 }
