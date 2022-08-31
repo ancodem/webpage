@@ -1,23 +1,34 @@
 import React from 'react'
-import { Typography } from '@mui/material'
+import PrintIcon from '@mui/icons-material/Print'
 
-import { useAppSelector } from 'hooks'
 import flag from 'assets/flag.png'
+import { useAppSelector } from 'hooks'
 import { Stack, NameField, Location } from 'components'
 import {
   HeaderContainer,
   UserInfo,
   UserAvatar,
   HeaderContent,
+  PrintInfo,
+  Language,
 } from './Header.styles'
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  handlePrint: () => void
+}
+
+export const Header: React.FC<HeaderProps> = ({ handlePrint }) => {
   const { userAvatar } =
     useAppSelector(state => state.main)
 
   return (
-    <HeaderContent>
-      <HeaderContainer component="header">
+    <HeaderContainer component="header">
+      <HeaderContent>
+
+        <PrintInfo onClick={() => handlePrint()}>
+          <PrintIcon />
+          Print this page
+        </PrintInfo>
 
         <UserAvatar
           src={userAvatar}
@@ -27,14 +38,19 @@ export const Header: React.FC = () => {
         <UserInfo>
           <NameField />
           <Location />
-          <Typography sx={{ display: 'flex', gap: '8px' }}>
-            <img src={flag} alt='flag' width='24px' height='24px' />
+          <Language>
+            <img
+              src={flag}
+              alt='flag'
+              width='24px'
+              height='24px'
+            />
             English
-          </Typography>
+          </Language>
           <Stack />
         </UserInfo>
 
-      </HeaderContainer >
-    </HeaderContent>
+      </HeaderContent>
+    </HeaderContainer >
   )
 }
