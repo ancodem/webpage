@@ -6,10 +6,15 @@ export const AppContainer = styled(Box)(() => ({
 
 export const Image = styled('img')(({ theme }) => ({
   width: '264px',
+  height: 'auto',
   [theme.breakpoints.down('lg')]: {
     width: '200px',
   },
   [theme.breakpoints.down('md')]: {
+    width: '500px',
+    justifSelf: 'center'
+  },
+  [theme.breakpoints.down('sm')]: {
     width: '300px',
     justifSelf: 'center'
   }
@@ -57,6 +62,9 @@ export const AddInfo = styled(Box)(({ theme }) => ({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  [theme.breakpoints.down('sm')]: {
+    flexDirection: 'column',
+  },
 })) as typeof Box
 
 export const PrintInfo = styled(Link)(({ theme }) => ({
@@ -77,3 +85,4 @@ export const PrintInfo = styled(Link)(({ theme }) => ({
     color: theme.palette.hover.main,
   },
 })) as typeof Link
+

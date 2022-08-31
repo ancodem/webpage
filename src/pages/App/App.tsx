@@ -36,11 +36,7 @@ export const App: React.FC = () => {
 
 
             <ContentSection title='Sample code'>
-              <Box
-                sx={{ height: '50px', width: '40px' }}
-              >
-                <Image alt='sample code' src={sampleCode} />
-              </Box>
+              <Image alt='sample code' src={sampleCode} />
             </ContentSection>
 
             <AddInfo>
