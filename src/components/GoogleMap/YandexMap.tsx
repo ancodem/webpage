@@ -36,7 +36,7 @@ export const YandexMap: React.FC = () => {
           map.controls.remove('rulerControl') // удаляем контрол правил
           map.behaviors.disable(['scrollZoom']) // отключаем скролл карты (опционально)
         })
-        .catch((error: any) => console.log('Failed to load Yandex Maps', error))
+        .catch((err: any) => console.log('Failed to load Yandex Maps', err))
     }
     const root = document.getElementById('map')
     root!.appendChild(script)
