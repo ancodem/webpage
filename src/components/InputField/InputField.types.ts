@@ -1,5 +1,5 @@
 import {
-  NameSchemaType, TechnologyNameSchemaType, ExperienceSchemaType
+  NoSpecialSymbolsSchemaType, TechnologyNameSchemaType, ExperienceSchemaType
 } from 'validationSchemas/validation.types'
 
 export interface FormValues {
@@ -8,7 +8,7 @@ export interface FormValues {
 
 export interface InputProps {
   validationSchema:
-  NameSchemaType | TechnologyNameSchemaType | ExperienceSchemaType
+  NoSpecialSymbolsSchemaType | TechnologyNameSchemaType | ExperienceSchemaType
   action: (arg: any) => void
   handleToggleEditing: (arg: boolean) => void
   placeholder: string | number

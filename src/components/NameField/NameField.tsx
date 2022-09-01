@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Box } from '@mui/material'
 
 import { useAppSelector, useActions } from 'hooks'
-import { nameSchema } from 'validationSchemas'
+import { noSpecialSymbolsSchema } from 'validationSchemas'
 import { InputField } from 'components'
 import { Name } from './NameField.styles'
 
@@ -16,7 +16,7 @@ export const NameField: React.FC = () => {
       {isInEditingMode
         ? <InputField
           handleToggleEditing={toggleEditingMode}
-          validationSchema={nameSchema}
+          validationSchema={noSpecialSymbolsSchema}
           placeholder={userName}
           action={changeName}
           sx={{

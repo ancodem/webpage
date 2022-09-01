@@ -42,6 +42,9 @@ const mainSlice = createSlice({
       )
       state.userStack[toBeChanged].yearsOfExperience = action.payload.expInput
     },
+    updateLocation: (state, action: PayloadAction<string>) => {
+      state.location = action.payload
+    }
   },
 })
 /* eslint-enable no-param-reassign */

@@ -1,4 +1,4 @@
-import { styled, Link, Box } from '@mui/material'
+import { styled, Box } from '@mui/material'
 
 export const AppContainer = styled(Box)(() => ({
   // epmty 
@@ -6,16 +6,21 @@ export const AppContainer = styled(Box)(() => ({
 
 export const Image = styled('img')(({ theme }) => ({
   width: '264px',
+  height: 'auto',
   [theme.breakpoints.down('lg')]: {
     width: '200px',
   },
   [theme.breakpoints.down('md')]: {
+    width: '500px',
+    justifSelf: 'center'
+  },
+  [theme.breakpoints.down('sm')]: {
     width: '300px',
     justifSelf: 'center'
   }
 }))
 
-export const Main = styled(Box)(({ theme }) => ({
+export const Main = styled(Box)(() => ({
   boxSizing: 'border-box',
   margin: '56px auto',
   maxWidth: '1104px',
@@ -57,23 +62,8 @@ export const AddInfo = styled(Box)(({ theme }) => ({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  [theme.breakpoints.down('sm')]: {
+    flexDirection: 'column',
+  },
 })) as typeof Box
 
-export const PrintInfo = styled(Link)(({ theme }) => ({
-  display: 'flex',
-  gap: '8px',
-  fontWeight: '400',
-  fontSize: '16px',
-  position: 'absolute',
-  top: '40px',
-  right: '156px',
-  transitionDuration: '500ms',
-
-  [theme.breakpoints.down('md')]: {
-    right: '100px',
-  },
-  '&:hover': {
-    cursor: 'pointer',
-    color: theme.palette.hover.main,
-  },
-})) as typeof Link
