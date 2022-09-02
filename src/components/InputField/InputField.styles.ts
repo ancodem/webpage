@@ -6,7 +6,7 @@ export const CorrectIcon = styled(CheckCircleIcon)(() => ({
   boxSizing: 'border-box',
   color: '#33C127',
   position: 'absolute',
-  top: '5px',
+  top: '4px',
   right: '4px',
   height: '16px',
   widht: '16px',
@@ -15,7 +15,7 @@ export const CorrectIcon = styled(CheckCircleIcon)(() => ({
 export const WrongIcon = styled(Cancel)(({ theme }) => ({
   color: theme.palette.hover.main,
   position: 'absolute',
-  top: '5px',
+  top: '3px',
   right: '4px',
   height: '16px',
   widht: '16px',
