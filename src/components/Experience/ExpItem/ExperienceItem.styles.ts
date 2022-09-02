@@ -11,13 +11,14 @@ export const YearsOfExperience = styled(Typography)(({ theme }) => ({
 
 export const TechnologyName = styled(Typography)(() => ({
   fontWeight: '700',
+  fontSize: '16px',
 })) as typeof Typography
 
 export const Item = styled(ListItem)(() => ({
   margin: '4px auto',
   padding: '0px',
-  lineHeight: '20px',
   fontSize: '16px',
+  lineHeight: '20px',
   '&::before': {
     content: '"–"',
     marginRight: '8px',
