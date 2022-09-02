@@ -1,11 +1,11 @@
 import { Typography, styled } from '@mui/material'
 
 export const Name = styled(Typography)(() => ({
-  alignItems: 'center',
-  fontWeight: '500',
-  lineHeight: '48px',
-  fontSize: '40px',
   transitionDuration: '500ms',
+  alignItems: 'center',
+  lineHeight: '48px',
+  fontWeight: '500',
+  fontSize: '40px',
   width: '360px',
 
   '&:hover': {

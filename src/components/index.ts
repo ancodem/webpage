@@ -1,23 +1,23 @@
-import Header from './Header'
-import Portfolio from './Portfolio'
-import Experience from './Experience'
-import Location from './Location'
-import BlockQuote from './BlockQuote'
 import ContentSection from './ContentSection'
+import Experience from './Experience'
+import BlockQuote from './BlockQuote'
 import InputField from './InputField'
-import Stack from './Skills'
+import Portfolio from './Portfolio'
 import NameField from './NameField'
-import YandexMap from './GoogleMap'
+import YandexMap from './YandexMap'
+import Location from './Location'
+import Header from './Header'
+import Stack from './Stack'
 
 export {
-  YandexMap,
-  NameField,
-  Stack,
-  InputField,
   ContentSection,
-  Header,
-  Portfolio,
+  InputField,
   Experience,
-  Location,
   BlockQuote,
+  NameField,
+  YandexMap,
+  Portfolio,
+  Location,
+  Header,
+  Stack,
 }

@@ -1,30 +1,33 @@
-import { styled, Link, Typography, Container, Box, Avatar } from '@mui/material'
+import { styled, Typography, Container, Box, Avatar } from '@mui/material'
 
 export const HeaderContainer = styled(Box)(({ theme }) => ({
-  width: '100vw',
   backgroundColor: theme.palette.neutral.main,
+  width: '100vw',
+
 })) as typeof Box
 
 export const UserInfo = styled(Box)(() => ({
-  minWidth: '360px',
-  margin: '24px',
-  display: 'flex',
   flexDirection: 'column',
+  minWidth: '360px',
+  display: 'flex',
+  margin: '24px',
   gap: '8px',
+
 })) as typeof Box
 
 export const UserAvatar = styled(Avatar)(() => ({
-  width: '168px',
-  height: '168px',
   border: 'solid 4px white',
+  height: '168px',
+  width: '168px',
+
 })) as typeof Avatar
 
 export const HeaderContent = styled(Container)(({ theme }) => ({
+  padding: '40px 156px 16px 156px',
+  flexDirection: 'row',
   position: 'relative',
   maxWidth: '1104px',
-  padding: '40px 156px 16px 156px',
   display: 'flex',
-  flexDirection: 'row',
 
   [theme.breakpoints.down('md')]: {
     padding: '30px 100px 16px 100px'
@@ -38,27 +41,6 @@ export const HeaderContent = styled(Container)(({ theme }) => ({
   },
 
 })) as typeof Box
-
-export const PrintInfo = styled(Link)(({ theme }) => ({
-  display: 'flex',
-  gap: '8px',
-  fontWeight: '400',
-  fontSize: '16px',
-  position: 'absolute',
-  top: '40px',
-  right: '0px',
-  transitionDuration: '500ms',
-
-  [theme.breakpoints.down('md')]: {
-    right: '100px',
-  },
-
-  '&:hover': {
-    cursor: 'pointer',
-    color: theme.palette.hover.main,
-  },
-
-})) as typeof Link
 
 export const Language = styled(Typography)(({ theme }) => ({
   display: 'flex',

@@ -37,9 +37,13 @@ export const ExpItem: React.FC<ExperienceItemProps> =
               validationSchema={experienceSchema}
               action={handleExperienceUpdate}
               placeholder={years}
-              sx={{ marginLeft: '8px', width: '50px' }}
+              sx={{
+                marginLeft: '8px',
+                width: '50px'
+              }}
             />
-            : <YearsOfExperience onClick={() => handleToggleEditing(true)}>
+            : <YearsOfExperience
+              onClick={() => handleToggleEditing(true)}>
               {years} years
             </YearsOfExperience>
         }

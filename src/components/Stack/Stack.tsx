@@ -1,17 +1,19 @@
-import React, { lazy, useCallback, useState } from 'react'
+import React, { Suspense, lazy, useCallback, useState } from 'react'
 
 import { technologyNameSchema } from 'validationSchemas'
-import { useActions, useAppSelector } from 'hooks'
 import { StackType } from 'store/reducers/reducer.types'
-import { AddSkillButton, StackContainer } from './Stack.styles'
+import { useActions, useAppSelector } from 'hooks'
+import {
+  AddSkillButton, StackContainer
+} from './Stack.styles'
 import Skill from './Skill'
 
 const InputField = lazy(() => import('components/InputField'))
 
 export const Stack: React.FC = () => {
+  const [isInEditingMode, toggleEditingMode] = useState(false)
   const { userStack } = useAppSelector(state => state.main)
   const { addTechnology } = useActions()
-  const [isInEditingMode, toggleEditingMode] = useState(false)
 
   const handleAddTechnology = useCallback((arg: string) => {
     addTechnology(
@@ -30,13 +32,15 @@ export const Stack: React.FC = () => {
       )}
 
       {isInEditingMode
-        ? <InputField
-          validationSchema={technologyNameSchema}
-          action={handleAddTechnology}
-          handleToggleEditing={handleToggleEditing}
-          placeholder=''
-          sx={{ height: '24px' }}
-        />
+        ? <Suspense fallback={<AddSkillButton />}>
+          <InputField
+            validationSchema={technologyNameSchema}
+            action={handleAddTechnology}
+            handleToggleEditing={handleToggleEditing}
+            placeholder=''
+            sx={{ height: '24px' }}
+          />
+        </Suspense>
         : <AddSkillButton
           sx={{ cursor: 'pointer' }}
           onClick={() => toggleEditingMode(true)}

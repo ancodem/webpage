@@ -1,71 +1,101 @@
-import React, { lazy, useCallback, Suspense } from 'react'
+import PrintIcon from '@mui/icons-material/Print'
 import { Box, Typography } from '@mui/material'
+import React, { useState } from 'react'
 
-import { YandexMap, BlockQuote, Experience, Header, Portfolio, ContentSection } from 'components'
 import sampleCode from 'assets/sampleCode.png'
 import { usePrint } from 'hooks'
 import {
-  Main, AppContainer, AddInfo, ContentContainer, Image
+  ContentSection,
+  BlockQuote,
+  Experience,
+  Portfolio,
+  YandexMap,
+  Header,
+} from 'components'
+import {
+  ContentContainer,
+  PrintOnMobile,
+  AppContainer,
+  PrintInfo,
+  AddInfo,
+  Image,
+  Main,
 } from './App.styles'
 
 export const App: React.FC = () => {
   const { printRef, handlePrint } = usePrint()
-  const handlePrintPage = useCallback(
-    () => handlePrint(), []
-  )
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
+  window.addEventListener('resize', () => {
+    setWindowWidth(window.innerWidth)
+  })
   return (
-    <AppContainer component="main" ref={printRef} >
-      <Header handlePrint={handlePrintPage} />
+    <Box component="main">
 
-      <Main>
-        <ContentContainer>
-          <ContentSection title='Portfolio'>
-            <Portfolio />
-          </ContentSection>
+      {
+        (windowWidth > 900)
+          ? <PrintInfo onClick={() => handlePrint()}>
+            <PrintIcon />
+            Print this page
+          </PrintInfo>
+          : <PrintOnMobile onClick={() => handlePrint()} />
+      }
 
-          <ContentSection title='Experience'>
-            <Experience />
-          </ContentSection>
+      <AppContainer ref={printRef} >
 
-          <ContentSection title='Sample code'>
-            <Image alt='sample code' src={sampleCode} />
-          </ContentSection>
+        <Header />
 
-          <AddInfo>
-            <ContentSection title='Availability'>
-              <Box>
-                full time
-              </Box>
+        <Main>
+          <ContentContainer>
+            <ContentSection title='Portfolio'>
+              <Portfolio />
             </ContentSection>
 
-            <ContentSection title='Preferred environment'>
-              <Typography>
-                GitHub, MacOS, OSX
-              </Typography>
+            <ContentSection title='Experience'>
+              <Experience />
             </ContentSection>
-          </AddInfo>
-        </ContentContainer>
 
-        <ContentContainer>
-          <ContentSection
-            boxSX={{ textAlign: 'center' }}
-            title='The Most Amaizing...'>
-            <BlockQuote>
-              The only true wisdom is in knowing you know nothing...
-            </BlockQuote>
-          </ContentSection>
+            <ContentSection title='Sample code'>
+              <Image alt='sample code' src={sampleCode} />
+            </ContentSection>
 
-          <ContentSection
-            boxSX={{ textAlign: 'center' }}
-            title='In clients I look for...'>
-            <BlockQuote>
-              There is only one good, knowledge, and one evil, ignorance.
-            </BlockQuote>
-          </ContentSection>
-          <YandexMap />
-        </ContentContainer>
-      </Main>
-    </AppContainer >
+            <AddInfo>
+              <ContentSection title='Availability'>
+                <Box>
+                  full time
+                </Box>
+              </ContentSection>
+
+              <ContentSection title='Preferred environment'>
+                <Typography>
+                  GitHub, MacOS, OSX
+                </Typography>
+              </ContentSection>
+            </AddInfo>
+          </ContentContainer>
+
+          <ContentContainer>
+            <ContentSection
+              boxSX={{ textAlign: 'center' }}
+              title='The Most Amaizing...'>
+              <BlockQuote>
+                The only true wisdom is in knowing you know nothing...
+              </BlockQuote>
+            </ContentSection>
+
+            <ContentSection
+              boxSX={{ textAlign: 'center' }}
+              title='In clients I look for...'>
+              <BlockQuote>
+                There is only one good, knowledge, and one evil, ignorance.
+              </BlockQuote>
+            </ContentSection>
+
+            <YandexMap />
+
+          </ContentContainer>
+        </Main>
+      </AppContainer >
+    </Box >
   )
 }

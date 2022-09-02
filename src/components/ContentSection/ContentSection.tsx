@@ -7,7 +7,10 @@ export const ContentSection
   : React.FC<ContentProps> =
   ({ title, children, boxSX, titleSX }) => (
     <Section sx={{ ...boxSX }}>
-      <ContentTitle variant="h4" sx={{ ...titleSX }}>
+      <ContentTitle
+        variant="h4"
+        sx={{ ...titleSX }}
+      >
         {title}
       </ContentTitle>
       {children}
