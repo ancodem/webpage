@@ -13,19 +13,23 @@ export const MapContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     marginBottom: '40px',
     marginTop: '20px',
-    minWidth: '550px',
-    height: '500px',
+    height: '40%',
+    width: '60%',
   },
 
   [theme.breakpoints.down('sm')]: {
-    minWidth: '280px',
+    marginBottom: '40px',
+    marginTop: '20px',
     height: '400px',
+    width: '40%',
   },
 
 })) as typeof Box
 
 export const MapSkeleton = styled(Skeleton)(() => ({
   borderRadius: '6px',
+  marginRight: 'auto',
+  marginLeft: 'auto',
   height: '200px',
   width: '552px',
   padding: '0',
