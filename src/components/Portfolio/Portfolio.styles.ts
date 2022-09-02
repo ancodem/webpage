@@ -6,15 +6,15 @@ export const PortfolioList = styled(List)(() => ({
 }))
 
 export const PortfolioItem = styled(ListItem)(() => ({
+  padding: '4px 0px',
   minHeight: '20px',
   maxWidth: '245px',
-  padding: '4px 0px',
   display: 'flex',
   '&::before': {
     alignSelf: 'baseline',
-    content: '"–"',
     marginRight: '8px',
-    marginTop: '0px'
+    marginTop: '0px',
+    content: '"–"',
   }
 }))
 

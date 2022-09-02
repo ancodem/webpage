@@ -24,8 +24,8 @@ export const UserAvatar = styled(Avatar)(() => ({
 
 export const HeaderContent = styled(Container)(({ theme }) => ({
   padding: '40px 156px 16px 156px',
-  position: 'relative',
   flexDirection: 'row',
+  position: 'relative',
   maxWidth: '1104px',
   display: 'flex',
 

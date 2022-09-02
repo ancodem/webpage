@@ -2,10 +2,11 @@ import { List, styled } from '@mui/material'
 import Add from '@mui/icons-material/Add'
 
 export const StackContainer = styled(List)(({ theme }) => ({
-  display: 'flex',
   flexWrap: 'wrap',
-  gap: '8px',
+  display: 'flex',
   padding: '0px',
+  gap: '8px',
+
   [theme.breakpoints.down('md')]: {
     justifyContent: 'center',
   },
@@ -17,11 +18,11 @@ export const StackContainer = styled(List)(({ theme }) => ({
 })) as typeof List
 
 export const AddSkillButton = styled(Add)(() => ({
+  backgroundColor: '#333333',
+  borderRadius: '4px',
+  color: 'white',
   height: '24px',
   width: '24px',
-  backgroundColor: '#333333',
-  color: 'white',
-  borderRadius: '4px',
 
 }))
 
