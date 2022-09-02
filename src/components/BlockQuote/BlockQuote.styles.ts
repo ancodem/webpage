@@ -13,6 +13,7 @@ export const QuoteContainer = styled('blockquote')(({ theme }) => ({
     top: '-20px',
     fontSize: '65px',
     color: theme.palette.neutral.main,
+
     [theme.breakpoints.down('lg')]: {
       fontSize: '50px',
       left: '-20px',
@@ -28,6 +29,7 @@ export const QuoteContainer = styled('blockquote')(({ theme }) => ({
     content: '"❞"',
     fontSize: '65px',
     color: theme.palette.neutral.main,
+
     [theme.breakpoints.down('lg')]: {
       fontSize: '50px',
       right: '-20px',
@@ -37,7 +39,7 @@ export const QuoteContainer = styled('blockquote')(({ theme }) => ({
 
 })) as typeof Box
 
-export const Quote = styled(Typography)(({ theme }) => ({
+export const Quote = styled(Typography)(() => ({
   fontSize: '16px',
   textAlign: 'center',
   flexWrap: 'wrap',
