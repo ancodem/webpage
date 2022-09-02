@@ -1,8 +1,9 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, Suspense, useState } from 'react'
 import { Typography, Box } from '@mui/material'
 
 import { useActions, useAppSelector } from 'hooks'
 import { noSpecialSymbolsSchema } from 'validationSchemas'
+import { LocationText } from './Location.styles'
 
 const InputField = React.lazy(() => import('components/InputField'))
 
@@ -18,22 +19,23 @@ export const Location: React.FC = () => {
   return (
     <Box
       component="address"
-      sx={{fontStyle: 'normal'}}
+      sx={{ fontStyle: 'normal' }}
     >
       {isInEditingMode
-        ? <InputField
-          handleToggleEditing={handleToggleEditing}
-          validationSchema={noSpecialSymbolsSchema}
-          placeholder={location}
-          action={handleAction}
-          sx={{ width: '360px', height: '24px' }}
-        />
-        : <Typography
+        ? <Suspense fallback={<LocationText>{location}</LocationText>}>
+          <InputField
+            handleToggleEditing={handleToggleEditing}
+            validationSchema={noSpecialSymbolsSchema}
+            placeholder={location}
+            action={handleAction}
+            sx={{ width: '360px', height: '24px' }}
+          />
+        </Suspense>
+        : <LocationText
           onClick={() => toggleEditing(true)}
-          sx={{ fontSize: '16px' }}
         >
           {location}
-        </Typography>
+        </LocationText>
       }
     </Box>
   )
