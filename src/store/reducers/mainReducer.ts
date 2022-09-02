@@ -5,9 +5,9 @@ import { StateType, StackType } from './reducer.types'
 const initialState: StateType = {
   userName: 'John Smith',
   userStack: [
-    { id: 0, technologyName: 'Ruby', yearsOfExperience: 2 },
     { id: 1, technologyName: 'PHP', yearsOfExperience: 6 },
     { id: 2, technologyName: 'Java Script', yearsOfExperience: 4.5 },
+    { id: 0, technologyName: 'Ruby', yearsOfExperience: 2 },
   ],
   userAvatar: 'https://resize-media.festival-cannes.com/fit-in/2560x1620/media_image/0001/48/c3c10a98dd47ddf0cba7be6850f0815dae7841a8.jpeg',
   location: 'Portland, Oregon',
@@ -41,6 +41,7 @@ const mainSlice = createSlice({
         s => s.id === action.payload.expId
       )
       state.userStack[toBeChanged].yearsOfExperience = action.payload.expInput
+      state.userStack.sort((s1, s2) => s2.yearsOfExperience - s1.yearsOfExperience)
     },
     updateLocation: (state, action: PayloadAction<string>) => {
       state.location = action.payload
