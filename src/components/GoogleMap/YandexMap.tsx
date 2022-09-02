@@ -4,19 +4,18 @@ import { useGetLocationQuery } from 'services'
 import ymaps from 'ymaps'
 import { MapContainer } from './YandexMap.styles'
 
-const center = [48.8866527839977, 2.34310679732974]
 
 export const YandexMap: React.FC = () => {
   const { location } = useAppSelector(state => state.main)
 
+  const center = [48.8866527839977, 2.34310679732974]
+
   const { data, error, isLoading } = useGetLocationQuery(location)
-  console.info(data)
+
   const script = useMemo(() => document.createElement('script'), [])
   script.src = `https://api-maps.yandex.ru/2.1/?apikey=${process.env.REACT_APP_YANDEX_API_KEY}&lang=en_US`
   script.async = true
   script.type = 'text/javascript'
-
-
 
   useEffect(() => {
     script.onload = () => {
@@ -24,7 +23,7 @@ export const YandexMap: React.FC = () => {
         .load()
         .then((maps: any) => {
           const map = new maps.Map('yandexmap', {
-            center: [55, 22],
+            center,
             zoom: 10,
           })
           map.controls.remove('geolocationControl') // удаляем геолокацию
