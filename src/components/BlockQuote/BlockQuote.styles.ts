@@ -2,17 +2,17 @@ import { Typography, Box, styled } from '@mui/material'
 
 export const QuoteContainer = styled('blockquote')(({ theme }) => ({
   position: 'relative',
-  maxWidth: '240px',
   maxHeight: '100px',
+  maxWidth: '240px',
 
   '&::before': {
+    color: theme.palette.neutral.main,
     position: 'absolute',
-    zIndex: '-1',
+    fontSize: '65px',
     content: '"❝"',
     left: '-28px',
+    zIndex: '-1',
     top: '-20px',
-    fontSize: '65px',
-    color: theme.palette.neutral.main,
 
     [theme.breakpoints.down('lg')]: {
       fontSize: '50px',
@@ -22,13 +22,13 @@ export const QuoteContainer = styled('blockquote')(({ theme }) => ({
   },
 
   '&::after': {
-    zIndex: '-1',
-    position: 'absolute',
-    right: '-15px',
-    top: '20px',
-    content: '"❞"',
-    fontSize: '65px',
     color: theme.palette.neutral.main,
+    position: 'absolute',
+    fontSize: '65px',
+    right: '-15px',
+    content: '"❞"',
+    top: '20px',
+    zIndex: '-1',
 
     [theme.breakpoints.down('lg')]: {
       fontSize: '50px',
@@ -40,8 +40,8 @@ export const QuoteContainer = styled('blockquote')(({ theme }) => ({
 })) as typeof Box
 
 export const Quote = styled(Typography)(() => ({
-  fontSize: '16px',
   textAlign: 'center',
+  fontSize: '16px',
   flexWrap: 'wrap',
 
 })) as typeof Typography

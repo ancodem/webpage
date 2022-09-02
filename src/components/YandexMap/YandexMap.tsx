@@ -1,21 +1,21 @@
-import { useAppSelector } from 'hooks'
 import React, { useEffect, useMemo } from 'react'
-import { useGetLocationQuery } from 'services'
 import ymaps from 'ymaps'
+
+import { useGetLocationQuery } from 'services'
+import { useAppSelector } from 'hooks'
 import { MapContainer } from './YandexMap.styles'
 
 
 export const YandexMap: React.FC = () => {
   const { location } = useAppSelector(state => state.main)
+  const { data, error, isLoading } = useGetLocationQuery(location)
 
   const center = [48.8866527839977, 2.34310679732974]
 
-  const { data, error, isLoading } = useGetLocationQuery(location)
-
   const script = useMemo(() => document.createElement('script'), [])
   script.src = `https://api-maps.yandex.ru/2.1/?apikey=${process.env.REACT_APP_YANDEX_API_KEY}&lang=en_US`
-  script.async = true
   script.type = 'text/javascript'
+  script.async = true
 
   useEffect(() => {
     script.onload = () => {

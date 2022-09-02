@@ -17,7 +17,6 @@ export const Experience: React.FC = () => {
           key={s.id}
           id={s.id}
         />
-
       )}
     </List>
   )
