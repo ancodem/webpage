@@ -5,7 +5,7 @@ import Location from './Location'
 import BlockQuote from './BlockQuote'
 import ContentSection from './ContentSection'
 import InputField from './InputField'
-import Stack from './Skills'
+import Stack from './Stack'
 import NameField from './NameField'
 import YandexMap from './GoogleMap'
 
