@@ -4,10 +4,10 @@ const experienceSchema = yup.object().shape({
   input: yup
     .number()
     .typeError('Use numbers!')
-    .positive('Not allowed')
     .required('Field is empty')
-    .min(0.1)
+    .positive('Not allowed')
     .max(70, 'Too much')
+    .min(0.1)
 })
 
 export type ExperienceSchemaType = typeof experienceSchema

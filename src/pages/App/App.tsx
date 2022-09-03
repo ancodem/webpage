@@ -14,10 +14,10 @@ import {
 } from 'components'
 import {
   ContentContainer,
+  AdditionalInfo,
   PrintOnMobile,
   AppContainer,
   PrintInfo,
-  AddInfo,
   Image,
   Main,
 } from './App.styles'
@@ -29,6 +29,7 @@ export const App: React.FC = () => {
   window.addEventListener('resize', () => {
     setWindowWidth(window.innerWidth)
   })
+
   return (
     <Box component="main">
 
@@ -59,7 +60,7 @@ export const App: React.FC = () => {
               <Image alt='sample code' src={sampleCode} />
             </ContentSection>
 
-            <AddInfo>
+            <AdditionalInfo>
               <ContentSection title='Availability'>
                 <Box>
                   full time
@@ -71,7 +72,7 @@ export const App: React.FC = () => {
                   GitHub, MacOS, OSX
                 </Typography>
               </ContentSection>
-            </AddInfo>
+            </AdditionalInfo>
           </ContentContainer>
 
           <ContentContainer>
