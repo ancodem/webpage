@@ -9,7 +9,7 @@ const initialState: StateType = {
     { id: 2, technologyName: 'Java Script', yearsOfExperience: 4.5 },
     { id: 0, technologyName: 'Ruby', yearsOfExperience: 2 },
   ],
-  userAvatar: 'https://resize-media.festival-cannes.com/fit-in/2560x1620/media_image/0001/48/c3c10a98dd47ddf0cba7be6850f0815dae7841a8.jpeg',
+  userAvatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR96LXw5kEw5KkdaXE5m-CbOopopUdVYD-9fA&usqp=CAU',
   location: 'Portland, Oregon',
 }
 

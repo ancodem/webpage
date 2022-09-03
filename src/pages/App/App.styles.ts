@@ -61,7 +61,7 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
 
 })) as typeof Box
 
-export const AddInfo = styled(Box)(({ theme }) => ({
+export const AdditionalInfo = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   display: 'flex',
   gap: '20px',

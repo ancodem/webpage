@@ -25,9 +25,9 @@ const theme = createTheme({
 
   typography: {
     h4: {
-      fontSize: '24px',
-      fontWeight: '500',
       lineHeight: '24px',
+      fontWeight: '500',
+      fontSize: '24px',
     },
   },
 
@@ -35,13 +35,13 @@ const theme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          fontFamily: 'Roboto',
-          color: '#3483CC',
           transitionDuration: '1s',
           textDecoration: 'none',
-          fontWeight: '400',
-          fontSize: '16px',
+          fontFamily: 'Roboto',
           lineHeight: '20px',
+          fontWeight: '400',
+          color: '#3483CC',
+          fontSize: '16px',
 
           '&:hover': {
             color: '#EB5757'
@@ -53,15 +53,15 @@ const theme = createTheme({
     MuiChip: {
       styleOverrides: {
         root: {
+          transitionDuration: '500ms',
+          backgroundColor: '#333333',
           fontFamily: 'Roboto',
+          borderRadius: '4px',
+          lineHeight: '16px',
           fontWeight: '400',
           fontSize: '14px',
           color: 'white',
-          lineHeight: '16px',
-          backgroundColor: '#333333',
-          borderRadius: '4px',
           height: '24px',
-          transitionDuration: '500ms',
 
           '&:hover': {
             backgroundColor: '#666666',
