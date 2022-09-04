@@ -1,4 +1,8 @@
-import { styled, Typography, Container, Box, Avatar } from '@mui/material'
+import { styled } from '@mui/material'
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
+import Avatar from '@mui/material/Avatar'
 
 export const HeaderContainer = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.neutral.main,

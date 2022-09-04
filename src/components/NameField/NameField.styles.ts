@@ -1,4 +1,5 @@
-import { Typography, styled } from '@mui/material'
+import { styled } from '@mui/material'
+import Typography from '@mui/material/Typography'
 
 export const Name = styled(Typography)(() => ({
   transitionDuration: '500ms',

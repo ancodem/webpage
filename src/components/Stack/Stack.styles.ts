@@ -1,5 +1,6 @@
-import { List, styled } from '@mui/material'
+import { styled } from '@mui/material'
 import Add from '@mui/icons-material/Add'
+import List from '@mui/material/List'
 
 export const StackContainer = styled(List)(({ theme }) => ({
   flexWrap: 'wrap',

@@ -1,6 +1,9 @@
-import { styled, Typography, Box, Input } from '@mui/material'
+import { styled } from '@mui/material'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import Cancel from '@mui/icons-material/Cancel'
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
+import Input from '@mui/material/Input'
 
 export const CorrectIcon = styled(CheckCircleIcon)(() => ({
   boxSizing: 'border-box',

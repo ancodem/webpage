@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
+import Skeleton from '@mui/material/Skeleton'
 
 import flag from 'assets/flag.png'
 import { useAppSelector } from 'hooks'
-import { Stack, NameField, Location } from 'components'
+import { NameField, Location } from 'components'
 import {
   HeaderContainer,
   HeaderContent,
-  UserAvatar,
   UserInfo,
   Language,
 } from './Header.styles'
+
+const UserAvatar = lazy(() => import('./Header.styles').then(style => ({ default: style.UserAvatar })))
+const Stack = lazy(() => import('components/Stack'))
 
 export const Header: React.FC = () => {
   const { userAvatar } =
@@ -19,10 +22,14 @@ export const Header: React.FC = () => {
     <HeaderContainer component="header">
       <HeaderContent>
 
-        <UserAvatar
-          src={userAvatar}
-          alt="avatar"
-        />
+        <Suspense fallback={
+          <Skeleton variant="rounded" width={168} height={168} />
+        }>
+          <UserAvatar
+            src={userAvatar}
+            alt="avatar"
+          />
+        </Suspense>
 
         <UserInfo>
           <NameField />
@@ -36,7 +43,9 @@ export const Header: React.FC = () => {
             />
             English
           </Language>
-          <Stack />
+          <Suspense fallback={<div>skills</div>}>
+            <Stack />
+          </Suspense>
         </UserInfo>
 
       </HeaderContent>
