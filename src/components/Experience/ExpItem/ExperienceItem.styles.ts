@@ -1,4 +1,6 @@
-import { styled, Typography, ListItem } from '@mui/material'
+import { styled } from '@mui/material'
+import Typography from '@mui/material/Typography'
+import ListItem from '@mui/material/ListItem'
 
 export const YearsOfExperience = styled(Typography)(({ theme }) => ({
   textDecoration: 'underline dotted',

@@ -1,5 +1,7 @@
-import { styled, Link, Box } from '@mui/material'
+import { styled } from '@mui/material'
 import PrintIcon from '@mui/icons-material/Print'
+import Box from '@mui/material/Box'
+import Link from '@mui/material/Link'
 
 export const AppContainer = styled(Box)(() => ({
   // epmty 

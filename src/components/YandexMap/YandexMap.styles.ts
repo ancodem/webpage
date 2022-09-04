@@ -1,4 +1,6 @@
-import { Skeleton, styled, Box } from '@mui/material'
+import { styled } from '@mui/material'
+import Skeleton from '@mui/material/Skeleton'
+import Box from '@mui/material/Box'
 
 export const MapContainer = styled(Box)(({ theme }) => ({
   marginBottom: '30px',

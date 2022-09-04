@@ -1,4 +1,7 @@
-import { styled, Box, Typography } from '@mui/material'
+import { styled } from '@mui/material'
+import Skeleton from '@mui/material/Skeleton'
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
 
 export const ContentTitle = styled(Typography)(({ theme }) => ({
   marginBottom: '14px',
@@ -27,3 +30,7 @@ export const Section = styled(Box)(({ theme }) => ({
   }
 
 })) as typeof Box
+
+export const ContentSkeleton = styled(Skeleton)(() => ({
+  minWidth: '250px'
+}))
