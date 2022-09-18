@@ -47,6 +47,7 @@ export const ExpItem: React.FC<ExperienceItemProps> =
               {years} years
             </YearsOfExperience>
         }
+
       </Item>
     )
   }
