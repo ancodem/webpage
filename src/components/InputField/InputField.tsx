@@ -26,6 +26,7 @@ export const InputField: React.FC<InputProps> = (
         actions.resetForm()
       }
     })
+
   return (
     <InputContainer
       component="form"
