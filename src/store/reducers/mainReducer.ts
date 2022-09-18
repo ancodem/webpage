@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { StateType, StackType } from './reducer.types'
 
 // INITIAL STATE ------------------------------------------------------------>
-const initialState: StateType = {
+export const initialState: StateType = {
   userName: 'John Smith',
   userStack: [
     { id: 1, technologyName: 'PHP', yearsOfExperience: 6 },
