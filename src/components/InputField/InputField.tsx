@@ -29,6 +29,7 @@ export const InputField: React.FC<InputProps> = (
 
   return (
     <InputContainer
+      role='form'
       component="form"
       onSubmit={handleSubmit}>
       <InputArea

@@ -43,6 +43,7 @@ export const ExpItem: React.FC<ExperienceItemProps> =
               }}
             />
             : <YearsOfExperience
+              data-testid='experience-item'
               onClick={() => handleToggleEditing(true)}>
               {years} years
             </YearsOfExperience>
